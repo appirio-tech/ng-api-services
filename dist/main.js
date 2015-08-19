@@ -4,7 +4,7 @@
 
   dependencies = ['ui.router', 'ngResource', 'app.constants'];
 
-  angular.module('appirio-tech-ng-api', dependencies);
+  angular.module('appirio-tech-ng-api-services', dependencies);
 
 }).call(this);
 
@@ -39,7 +39,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('UserV3APIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('UserV3APIService', srv);
 
 }).call(this);
 
@@ -58,7 +58,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('AuthorizationsAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('AuthorizationsAPIService', srv);
 
 }).call(this);
 
@@ -95,7 +95,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('FinalFixesAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('FinalFixesAPIService', srv);
 
 }).call(this);
 
@@ -125,7 +125,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('MessagesAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('MessagesAPIService', srv);
 
 }).call(this);
 
@@ -163,7 +163,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('SubmissionAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('SubmissionAPIService', srv);
 
 }).call(this);
 
@@ -213,7 +213,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('SubmissionDetailAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('SubmissionDetailAPIService', srv);
 
 }).call(this);
 
@@ -251,7 +251,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('ThreadsAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('ThreadsAPIService', srv);
 
 }).call(this);
 
@@ -288,7 +288,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('TimelineAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('TimelineAPIService', srv);
 
 }).call(this);
 
@@ -318,6 +318,6 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api').factory('WorkAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('WorkAPIService', srv);
 
 }).call(this);

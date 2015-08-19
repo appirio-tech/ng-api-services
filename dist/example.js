@@ -1,5 +1,5 @@
 window.FIXTURES = {
-    "swagger/v2-oauth.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v2-oauth.json": {
         "swagger": "2.0",
         "host": "topcoder.auth0.com",
         "basePath": "",
@@ -162,7 +162,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v2.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v2.json": {
         "swagger": "2.0",
         "info": {
                 "description": "Move your app forward with the Uber API",
@@ -226,7 +226,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-authorizations.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-authorizations.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -364,7 +364,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-events.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-events.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -619,7 +619,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-messages.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-messages.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -806,7 +806,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-threads.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-threads.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -990,6 +990,12 @@ window.FIXTURES = {
                                 "status": {
                                         "type": "integer",
                                         "sample": 200
+                                },
+                                "content": {
+                                        "type": "object",
+                                        "items": {
+                                                "$ref": "#/definitions/ThreadContent"
+                                        }
                                 }
                         }
                 },
@@ -1073,7 +1079,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-users.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-users.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -1223,7 +1229,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "swagger/v3-work.json": {
+    "bower_components/appirio-tech-api-schemas/swagger/v3-work.json": {
         "swagger": "2.0",
         "info": {
                 "description": "",
@@ -1335,7 +1341,7 @@ window.FIXTURES = {
                 }
         }
 },
-    "apiary/apcopilotservice.json": {
+    "bower_components/appirio-tech-api-schemas/apiary/apcopilotservice.json": {
         "ast": {
                 "_version": "3.0",
                 "metadata": [
@@ -2267,7 +2273,7 @@ window.FIXTURES = {
         "warnings": [],
         "sourcemap": null
 },
-    "apiary/apworkmicroservice.json": {
+    "bower_components/appirio-tech-api-schemas/apiary/apworkmicroservice.json": {
         "ast": {
                 "_version": "3.0",
                 "metadata": [
@@ -5213,7 +5219,7 @@ window.FIXTURES = {
         "warnings": [],
         "sourcemap": null
 },
-    "apiary/messaging14.json": {
+    "bower_components/appirio-tech-api-schemas/apiary/messaging14.json": {
         "ast": {
                 "_version": "3.0",
                 "metadata": [
@@ -5906,7 +5912,7 @@ window.FIXTURES = {
         "warnings": [],
         "sourcemap": null
 },
-    "apiary/submissiondraft.json": {
+    "bower_components/appirio-tech-api-schemas/apiary/submissiondraft.json": {
         "ast": {
                 "_version": "3.0",
                 "metadata": [
@@ -13023,7 +13029,7 @@ if (typeof sinon == "undefined") {
   ref = window.FIXTURES;
   for (key in ref) {
     fixture = ref[key];
-    if (key !== 'apiary/messaging14.json') {
+    if (key !== 'bower_components/appirio-tech-api-schemas/apiary/messaging14.json') {
       fixtures.push(fixture);
     }
   }
@@ -13057,7 +13063,7 @@ angular.module("app.constants", [])
   'use strict';
   var dependencies;
 
-  dependencies = ['ui.router', 'ngResource', 'app.constants', 'appirio-tech-ng-api'];
+  dependencies = ['ui.router', 'ngResource', 'app.constants', 'appirio-tech-ng-api-services'];
 
   angular.module('example', dependencies);
 
