@@ -1,0 +1,11 @@
+{
+  "name": "api-schemas",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "appirio-work-styles": "0.x.x",
+    "appirio-gulp-tasks": "3.x.x",
+    "gulp": "^3.8.11"
+  }
+}
