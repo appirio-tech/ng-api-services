@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/appirio-tech/messaging/badge.svg?branch=master&t=qP5jFO)](https://coveralls.io/r/appirio-tech/messaging?branch=master)
 
 ## Docs
-
+ 
 ## Development
 ```
 alias gserve='nvm use; gulp clean; gulp serve'
