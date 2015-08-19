@@ -1,6 +1,7 @@
 # ng-api-services
-[![Build Status](https://magnum.travis-ci.com/appirio-tech/messaging.svg?token=sjYcnNqPWxBpKgooh32F)](https://magnum.travis-ci.com/appirio-tech/messaging)
-[![Coverage Status](https://coveralls.io/repos/appirio-tech/messaging/badge.svg?branch=master&t=qP5jFO)](https://coveralls.io/r/appirio-tech/messaging?branch=master)
+[![Build Status](https://travis-ci.org/appirio-tech/ng-api-services.svg?branch=master)](https://travis-ci.org/appirio-tech/ng-api-services)
+[![Coverage Status](https://coveralls.io/repos/appirio-tech/ng-api-services/badge.svg?branch=master&service=github)](https://coveralls.io/github/appirio-tech/ng-api-services?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/55d4c48f6dbe17001e000008/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55d4c48f6dbe17001e000008)
 
 ## Docs
  

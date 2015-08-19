@@ -11,12 +11,6 @@ configs.templateCache.push
   root  : 'views/'
   module: 'example'
 
-configs.fixture =
-  files: [
-    'swagger/**/*.json'
-    'apiary/**/*.json'
-  ]
-
 ### END CONFIG ###
 loadTasksModule = require __dirname + '/node_modules/appirio-gulp-tasks/load-tasks.coffee'
 
