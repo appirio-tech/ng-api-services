@@ -1,5 +1,5 @@
 {
-  "name": "api-schemas",
+  "name": "appirio-tech-ng-api-services",
   "engines": {
     "node": ">=0.10.0"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "appirio-tech-ng-api",
+  "name": "appirio-tech-ng-api-services",
   "version": "0.0.2",
   "description": "API",
   "main": "./dist/main.js",

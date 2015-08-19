@@ -6,4 +6,4 @@ dependencies = [
   'app.constants'
 ]
 
-angular.module 'appirio-tech-ng-api', dependencies
+angular.module 'appirio-tech-ng-api-services', dependencies

@@ -35,4 +35,4 @@ srv = ($resource, API_URL) ->
 
 srv.$inject = ['$resource', 'API_URL']
 
-angular.module('appirio-tech-ng-api').factory 'SubmissionDetailAPIService', srv
+angular.module('appirio-tech-ng-api-services').factory 'SubmissionDetailAPIService', srv
