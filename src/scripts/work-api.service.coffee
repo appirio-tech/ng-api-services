@@ -13,7 +13,13 @@ srv = ($resource, API_URL) ->
 
   methods =
     put:
-      method: 'PUT'
+      method           :'PUT'
+      isArray          : false
+      transformResponse: transformResponse
+    get:
+      method           :'GET'
+      isArray          : false
+      transformResponse: transformResponse
 
   $resource url, {}, methods
 
