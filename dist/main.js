@@ -316,7 +316,7 @@
       },
       get: {
         method: 'GET',
-        isArray: false,
+        isArray: true,
         transformResponse: transformResponse
       }
     };
