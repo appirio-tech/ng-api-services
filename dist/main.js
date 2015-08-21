@@ -310,7 +310,14 @@
     };
     methods = {
       put: {
-        method: 'PUT'
+        method: 'PUT',
+        isArray: false,
+        transformResponse: transformResponse
+      },
+      get: {
+        method: 'GET',
+        isArray: false,
+        transformResponse: transformResponse
       }
     };
     return $resource(url, {}, methods);

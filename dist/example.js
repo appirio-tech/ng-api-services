@@ -13018,6 +13018,7 @@ if (typeof sinon == "undefined") {
 }).call(this);
 
 (function() {
+  'use strict';
   var fixture, fixtures, key, ref, token;
 
   AutoConfigFakeServer.init();
