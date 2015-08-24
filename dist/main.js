@@ -389,9 +389,9 @@
         isArray: true,
         transformResponse: transformResponse
       },
-      get: {
-        method: 'GET',
-        isArray: true,
+      put: {
+        method: 'PUT',
+        isArray: false,
         transformResponse: transformResponse
       },
       post: {
