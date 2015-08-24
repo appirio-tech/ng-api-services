@@ -353,7 +353,7 @@
       },
       get: {
         method: 'GET',
-        isArray: true,
+        isArray: false,
         transformResponse: transformResponse
       }
     };
