@@ -362,7 +362,7 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api-services').factory('CopilotProjectsService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('CopilotProjectsAPIService', srv);
 
 }).call(this);
 
@@ -405,6 +405,6 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api-services').factory('CopilotProjectDetailsService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('CopilotProjectDetailsAPIService', srv);
 
 }).call(this);

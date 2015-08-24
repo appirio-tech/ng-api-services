@@ -30,4 +30,4 @@ srv = ($resource, API_URL) ->
 
 srv.$inject = ['$resource', 'API_URL']
 
-angular.module('appirio-tech-ng-api-services').factory 'CopilotProjectDetailsService', srv
+angular.module('appirio-tech-ng-api-services').factory 'CopilotProjectDetailsAPIService', srv
