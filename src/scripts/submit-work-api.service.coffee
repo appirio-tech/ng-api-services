@@ -17,13 +17,18 @@ srv = ($resource, API_URL) ->
       isArray          : false
       transformResponse: transformResponse
 
+    post:
+      method           :'POST'
+      isArray          : false
+      transformResponse: transformResponse
+
     get:
       method           :'GET'
-      isArray          : true
+      isArray          : false
       transformResponse: transformResponse
 
   $resource url, params, methods
 
 srv.$inject = ['$resource', 'API_URL']
 
-angular.module('appirio-tech-ng-api-services').factory 'WorkAPIService', srv
+angular.module('appirio-tech-ng-api-services').factory 'SubmitWorkAPIService', srv
