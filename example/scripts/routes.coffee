@@ -51,6 +51,12 @@ config = ($stateProvider) ->
     controller  : 'WorkAPIController as vm'
     templateUrl : 'views/api.html'
 
+  states['submit-work-api'] =
+    url         : '/submit-work-api'
+    title       : 'SubmitWorkAPI'
+    controller  : 'SubmitWorkAPIController as vm'
+    templateUrl : 'views/api.html'
+
   for key, state of states
     $stateProvider.state key, state
 
