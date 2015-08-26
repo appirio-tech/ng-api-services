@@ -13233,6 +13233,12 @@ angular.module("example").run(["$templateCache", function($templateCache) {$temp
       controller: 'WorkAPIController as vm',
       templateUrl: 'views/api.html'
     };
+    states['submit-work-api'] = {
+      url: '/submit-work-api',
+      title: 'SubmitWorkAPI',
+      controller: 'SubmitWorkAPIController as vm',
+      templateUrl: 'views/api.html'
+    };
     results = [];
     for (key in states) {
       state = states[key];
@@ -13481,5 +13487,31 @@ angular.module("example").run(["$templateCache", function($templateCache) {$temp
   WorkAPIController.$inject = ['WorkAPIService'];
 
   angular.module('example').controller('WorkAPIController', WorkAPIController);
+
+}).call(this);
+
+(function() {
+  'use strict';
+  var SubmitWorkAPIController;
+
+  SubmitWorkAPIController = function(SubmitWorkAPIService) {
+    var activate, vm;
+    vm = this;
+    activate = function() {
+      var params, resource;
+      params = {
+        id: 123
+      };
+      resource = SubmitWorkAPIService.get(params, function(data) {
+        return vm.get = data;
+      });
+      return vm;
+    };
+    return activate();
+  };
+
+  SubmitWorkAPIController.$inject = ['SubmitWorkAPIService'];
+
+  angular.module('example').controller('SubmitWorkAPIController', SubmitWorkAPIController);
 
 }).call(this);
