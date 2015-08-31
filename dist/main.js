@@ -450,3 +450,30 @@
   angular.module('appirio-tech-ng-api-services').factory('CopilotProjectDetailsAPIService', srv);
 
 }).call(this);
+
+(function() {
+  'use strict';
+  var srv;
+
+  srv = function($resource, API_URL) {
+    var methods, params, url;
+    url = API_URL + '/v3/copilots/:copilotId/projects/:projectId/approved';
+    params = {
+      copilotId: '@copilotId',
+      projectId: '@projectId'
+    };
+    methods = {
+      post: {
+        method: 'POST',
+        isArray: false,
+        transformResponse: transformResponse
+      }
+    };
+    return $resource(url, params, methods);
+  };
+
+  srv.$inject = ['$resource', 'API_URL'];
+
+  angular.module('appirio-tech-timeline').factory('CopilotApprovalAPIService', srv);
+
+}).call(this);
