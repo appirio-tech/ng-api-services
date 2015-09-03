@@ -69,43 +69,6 @@
   transformResponse = function(response) {
     var parsed, ref;
     parsed = JSON.parse(response);
-    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || {};
-  };
-
-  srv = function($resource, API_URL) {
-    var actions, params, url;
-    url = API_URL + '/v3/projects/:workId/submissions/final-fixes';
-    params = {
-      workId: '@workId'
-    };
-    actions = {
-      put: {
-        method: 'PUT',
-        isArray: false,
-        transformResponse: transformResponse
-      },
-      get: {
-        method: 'GET',
-        isArray: false,
-        transformResponse: transformResponse
-      }
-    };
-    return $resource(url, params, actions);
-  };
-
-  srv.$inject = ['$resource', 'API_URL'];
-
-  angular.module('appirio-tech-ng-api-services').factory('FinalFixesAPIService', srv);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var srv, transformResponse;
-
-  transformResponse = function(response) {
-    var parsed, ref;
-    parsed = JSON.parse(response);
     return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
   };
 
@@ -131,31 +94,66 @@
 
 (function() {
   'use strict';
-  var srv, transformResponse;
+  var acceptFixes, confirmRanks, srv, updateRanks;
 
-  transformResponse = function(response) {
-    var parsed, ref;
-    parsed = JSON.parse(response);
-    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  updateRanks = function(data) {
+    var rankedSubmissions, transformedData;
+    if (data != null ? data.hasOwnProperty('rankedSubmissions') : void 0) {
+      rankedSubmissions = data.rankedSubmissions;
+    } else {
+      rankedSubmissions = data;
+    }
+    transformedData = {
+      rankedSubmissions: rankedSubmissions
+    };
+    return JSON.stringify(transformedData);
+  };
+
+  confirmRanks = function(data) {
+    var customerConfirmedRanks, transformedData;
+    if (data != null ? data.hasOwnProperty('customerConfirmedRanks') : void 0) {
+      customerConfirmedRanks = data.customerConfirmedRanks;
+    } else {
+      customerConfirmedRanks = data;
+    }
+    transformedData = {
+      customerConfirmedRanks: customerConfirmedRanks
+    };
+    return JSON.stringify(transformedData);
+  };
+
+  acceptFixes = function(data) {
+    var customerAcceptedFixes, transformedData;
+    if (data != null ? data.hasOwnProperty('customerAcceptedFixes') : void 0) {
+      customerAcceptedFixes = data.customerAcceptedFixes;
+    } else {
+      customerAcceptedFixes = data;
+    }
+    transformedData = {
+      customerAcceptedFixes: customerAcceptedFixes
+    };
+    return JSON.stringify(transformedData);
   };
 
   srv = function($resource, API_URL) {
     var methods, params, url;
-    url = API_URL + '/v3/projects/:workId/submissions';
+    url = API_URL + '/v3/projects/:projectId/steps/:stepId';
     params = {
-      workId: '@workId',
-      phase: '@phase'
+      projectId: '@projectId',
+      stepId: '@stepId'
     };
     methods = {
-      query: {
-        method: 'GET',
-        isArray: false,
-        transformResponse: transformResponse
+      updateRanks: {
+        method: 'PATCH',
+        transformRequest: updateRanks
       },
-      get: {
-        method: 'GET',
-        isArray: false,
-        transformResponse: transformResponse
+      confirmRanks: {
+        method: 'PATCH',
+        transformRequest: confirmRanks
+      },
+      acceptFixes: {
+        method: 'PATCH',
+        transformRequest: acceptFixes
       }
     };
     return $resource(url, params, methods);
@@ -163,57 +161,28 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api-services').factory('SubmissionAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('StepsAPIService', srv);
 
 }).call(this);
 
 (function() {
   'use strict';
-  var srv, transformResponse, updateRank;
-
-  transformResponse = function(response) {
-    var parsed, ref;
-    parsed = JSON.parse(response);
-    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || {};
-  };
-
-  updateRank = function(submission) {
-    var dataToUpdate;
-    dataToUpdate = {
-      rank: submission.rank
-    };
-    return dataToUpdate;
-  };
+  var srv;
 
   srv = function($resource, API_URL) {
-    var actions, params, url;
-    url = API_URL + '/v3/projects/:workId/submissions/:submissionId';
+    var params, url;
+    url = API_URL + '/v3/projects/:projectId/steps/:stepId/submissions/:submissionId';
     params = {
-      workId: '@workId',
+      projectId: '@projectId',
+      stepId: '@stepId',
       submissionId: '@submissionId'
     };
-    actions = {
-      query: {
-        method: 'GET',
-        isArray: false,
-        transformResponse: transformResponse
-      },
-      get: {
-        method: 'GET',
-        isArray: false,
-        transformResponse: transformResponse
-      },
-      updateRank: {
-        method: 'PUT',
-        transformRequest: updateRank
-      }
-    };
-    return $resource(url, params, actions);
+    return $resource(url, params);
   };
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api-services').factory('SubmissionDetailAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('SubmissionsAPIService', srv);
 
 }).call(this);
 
