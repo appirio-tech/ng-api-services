@@ -21,22 +21,16 @@ config = ($stateProvider) ->
     controller  : 'MessagesAPIController as vm'
     templateUrl : 'views/api.html'
 
-  states['final-fixes-api'] =
-    url         : '/final-fixes-api'
-    title       : 'FinalFixesAPI'
-    controller  : 'FinalFixesAPIController as vm'
+  states['steps-api'] =
+    url         : '/steps-api'
+    title       : 'StepsAPI'
+    controller  : 'StepsAPIController as vm'
     templateUrl : 'views/api.html'
 
-  states['submission-api'] =
-    url         : '/submission-api'
-    title       : 'SubmissionAPI'
-    controller  : 'SubmissionAPIController as vm'
-    templateUrl : 'views/api.html'
-
-  states['submission-detail-api'] =
-    url         : '/submission-detail-api'
-    title       : 'SubmissionDetailAPI'
-    controller  : 'SubmissionDetailAPIController as vm'
+  states['submissions-api'] =
+    url         : '/submissions-api'
+    title       : 'SubmissionsAPI'
+    controller  : 'SubmissionsAPIController as vm'
     templateUrl : 'views/api.html'
 
   states['threads-api'] =
