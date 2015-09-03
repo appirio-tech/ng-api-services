@@ -94,7 +94,19 @@
 
 (function() {
   'use strict';
-  var acceptFixes, confirmRanks, srv, updateRanks;
+  var acceptFixes, confirmRanks, srv, transformMultiple, transformSingle, updateRanks;
+
+  transformSingle = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || {};
+  };
+
+  transformMultiple = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  };
 
   updateRanks = function(data) {
     var rankedSubmissions, transformedData;
@@ -143,17 +155,27 @@
       stepId: '@stepId'
     };
     methods = {
+      get: {
+        transformResponse: transformSingle
+      },
+      query: {
+        transformResponse: transformMultiple,
+        isArray: true
+      },
       updateRanks: {
         method: 'PATCH',
-        transformRequest: updateRanks
+        transformRequest: updateRanks,
+        transformResponse: transformSingle
       },
       confirmRanks: {
         method: 'PATCH',
-        transformRequest: confirmRanks
+        transformRequest: confirmRanks,
+        transformResponse: transformSingle
       },
       acceptFixes: {
         method: 'PATCH',
-        transformRequest: acceptFixes
+        transformRequest: acceptFixes,
+        transformResponse: transformSingle
       }
     };
     return $resource(url, params, methods);
@@ -167,17 +189,38 @@
 
 (function() {
   'use strict';
-  var srv;
+  var srv, transformMultiple, transformSingle;
+
+  transformSingle = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || {};
+  };
+
+  transformMultiple = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  };
 
   srv = function($resource, API_URL) {
-    var params, url;
+    var methods, params, url;
     url = API_URL + '/v3/projects/:projectId/steps/:stepId/submissions/:submissionId';
     params = {
       projectId: '@projectId',
       stepId: '@stepId',
       submissionId: '@submissionId'
     };
-    return $resource(url, params);
+    methods = {
+      get: {
+        transformResponse: transformSingle
+      },
+      query: {
+        transformResponse: transformMultiple,
+        isArray: true
+      }
+    };
+    return $resource(url, params, methods);
   };
 
   srv.$inject = ['$resource', 'API_URL'];
