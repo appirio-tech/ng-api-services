@@ -1,5 +1,15 @@
 'use strict'
 
+transformSingle = (response) ->
+  parsed = JSON.parse response
+
+  parsed?.result?.content || {}
+
+transformMultiple = (response) ->
+  parsed = JSON.parse response
+
+  parsed?.result?.content || []
+
 updateRanks = (data) ->
   if data?.hasOwnProperty 'rankedSubmissions'
     rankedSubmissions = data.rankedSubmissions
@@ -41,15 +51,23 @@ srv = ($resource, API_URL) ->
     stepId   : '@stepId'
 
   methods =
+    get:
+      transformResponse: transformSingle
+    query:
+      transformResponse: transformMultiple
+      isArray          : true
     updateRanks:
       method: 'PATCH'
       transformRequest : updateRanks
+      transformResponse: transformSingle
     confirmRanks:
       method: 'PATCH'
       transformRequest : confirmRanks
+      transformResponse: transformSingle
     acceptFixes:
       method: 'PATCH'
       transformRequest : acceptFixes
+      transformResponse: transformSingle
 
 
   $resource url, params, methods

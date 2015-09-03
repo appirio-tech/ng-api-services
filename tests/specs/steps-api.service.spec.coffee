@@ -42,7 +42,6 @@ describe 'StepsAPIService', ->
       $httpBackend.flush()
 
     it 'should return a step', ->
-      console.log step
       expect(typeof step.id).to.equal 'string'
 
   it 'should have an updateRanks method', ->
@@ -60,7 +59,6 @@ describe 'StepsAPIService', ->
       $httpBackend.flush()
 
     it 'should return a step', ->
-      console.log step
       expect(typeof step.id).to.equal 'string'
 
   it 'should have an confirmRanks method', ->
@@ -78,7 +76,6 @@ describe 'StepsAPIService', ->
       $httpBackend.flush()
 
     it 'should return a step', ->
-      console.log step
       expect(typeof step.id).to.equal 'string'
 
   it 'should have an acceptFixes method', ->
@@ -96,5 +93,4 @@ describe 'StepsAPIService', ->
       $httpBackend.flush()
 
     it 'should return a step', ->
-      console.log step
       expect(typeof step.id).to.equal 'string'
