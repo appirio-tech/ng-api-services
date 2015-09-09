@@ -14,7 +14,7 @@ srv = ($resource, API_URL) ->
   methods =
     query:
       method           : 'GET'
-      isArray          : false
+      isArray          : true
       transformResponse: transformResponse
 
     get:
