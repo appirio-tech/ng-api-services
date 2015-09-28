@@ -2594,27 +2594,10 @@ window.FIXTURES = {
                                                                                 ]
                                                                         }
                                                                 ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "name": "work events",
-                                "description": "Currently events are generated only for `app-project` work objects.\n\nA work event has the following attributes:\n\n+ `workId`: Id of the work object the events are associated with\n\n+ `eventType`: Currently the only type is `timeline`\n\n+ `eventSubType`: a sub-categorization of the type of event.\n\n+ `sourceObjectType`: the type of object contained in the `sourceObjectContent` attribute. The current types are `app-project` and `challengedata`\n\n+ `sourceObjectContent`: the object is an `app-project` or `challengedata`\n\n\n**challengedata**\n\nA challengedata object contains information about a challenge state transition. It\nhas the following attributes:\n\n+ `challengeId`: Id of the topcoder challenge\n\n+ `tcDirectId`: Id of the topcoder Direct project associated with the challenge\n\n+ `phase`: The phase that the challenge is transitioning **from**. Current values are `Registration` and `Submission`\n\n+ `registrants`: An array of objects with a `handle` attribute. The handle is the topcoder user handle\n\n+ `submissions`: An array of objects with a `submissionId` attribute. The submissionId is the id of the topcoder submission\n\n\n",
-                                "resources": [
-                                        {
-                                                "element": "resource",
-                                                "name": "Retrieve work events",
-                                                "description": "",
-                                                "uriTemplate": "/work/{workId}/events",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
+                                                        },
                                                         {
                                                                 "name": "Retrieve work events",
-                                                                "description": "Retrieves an event timeline for a work object. \n\n",
+                                                                "description": "Retrieves an event timeline for a work object. \nCurrently events are generated only for `app-project` work objects.\n\nA work event has the following attributes:\n\n+ `workId`: Id of the work object the events are associated with\n\n+ `eventType`: Currently the only type is `timeline`\n\n+ `eventSubType`: a sub-categorization of the type of event.\n\n+ `sourceObjectType`: the type of object contained in the `sourceObjectContent` attribute. The current types are `app-project` and `challengedata`\n\n+ `sourceObjectContent`: the object is an `app-project` or `challengedata`\n\n\n**challengedata**\n\nA challengedata object contains information about a challenge state transition. It\nhas the following attributes:\n\n+ `challengeId`: Id of the topcoder challenge\n\n+ `tcDirectId`: Id of the topcoder Direct project associated with the challenge\n\n+ `phase`: The phase that the challenge is transitioning **from**. Current values are `Registration` and `Submission`\n\n+ `registrants`: An array of objects with a `handle` attribute. The handle is the topcoder user handle\n\n+ `submissions`: An array of objects with a `submissionId` attribute. The submissionId is the id of the topcoder submission\n\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [
                                                                         {
@@ -2676,18 +2659,7 @@ window.FIXTURES = {
                                                                                 ]
                                                                         }
                                                                 ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        },
-                                        {
-                                                "element": "resource",
-                                                "name": "Retrieve a specific work event",
-                                                "description": "",
-                                                "uriTemplate": "/work/{workId}/events/{eventId}",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
+                                                        },
                                                         {
                                                                 "name": "Retrieve a specific work event",
                                                                 "description": "",
@@ -2755,473 +2727,6 @@ window.FIXTURES = {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
                                                                                                                 "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff1\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436465238043-e51c4699-6a8c-48c7-95d1-fd6c50dca93c\",\n            \"modifiedBy\": null,\n            \"modifiedAt\": \"2015-07-09T11:07:18.043-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": null,\n            \"ownerId\": null,\n            \"version\": 1,\n            \"workId\": \"1436460345790-a58ebe97-4a26-4a6c-8fa7-e35dc2b32d9c\",\n            \"sourceObjectType\": \"challengedata\",\n            \"eventType\": \"timeline\",\n            \"eventSubType\": \"Registration\",\n            \"sourceObjectContent\": {\n                \"challengeId\": \"30049280\",\n                \"tcDirectId\": \"8646\",\n                \"registrants\": [\n                    {\n                        \"handle\": \"reguser\"\n                    }\n                ],\n                \"submissions\": null,\n                \"phase\": \"Registration\",\n                \"phaseStatus\": \"Open\",\n                \"userId\": null,\n                \"workRequestId\": \"1436460345790-a58ebe97-4a26-4a6c-8fa7-e35dc2b32d9c\"\n            },\n            \"userId\": null\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "name": "work steps",
-                                "description": "",
-                                "resources": [
-                                        {
-                                                "element": "resource",
-                                                "name": "Step Management",
-                                                "description": "Work steps are steps taken during the progression of a unit of work from start\nto completion. A step is analagous to a milestone. Note that work steps only apply\nto work with a model type of `app-project`\n\nSteps contain the following attributes\n\n+ `stepType`: (required) the type of step. The value must be one of \nRegistration, DesignConcepts, CheckpointReview, FinalReview, FinalFixes, Other\n\n+ `startsAt`: (required) a date/time when the step starts\n\n+ `endsAt`: (required) a date/time when the step ends. It must occur after `startsAt`\n\n+ `closed`: whether the step is active (false) or closed (true)\n\n+ `detail`: a client specific object\n\n",
-                                                "uriTemplate": "/work/{workId}/steps",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
-                                                        {
-                                                                "name": "Add a step",
-                                                                "description": "",
-                                                                "method": "POST",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": ""
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": \n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": \n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Retrieve all steps",
-                                                                "description": "",
-                                                                "method": "GET",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": ""
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"registration\",\n                \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n                \"closed\": \"true\",\n                \"detail\": {\n                }\n            },\n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"registration\",\n                \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n                \"closed\": \"true\",\n                \"detail\": {\n                }\n            },\n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Retrieve a step",
-                                                                "description": "",
-                                                                "method": "GET",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Update a step",
-                                                                "description": "",
-                                                                "method": "PUT",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"stepType\": \"registration\",\n    \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n    \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n    \"closed\": \"false\",\n    \"detail\": {\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"stepType\": \"registration\",\n    \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n    \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n    \"closed\": \"false\",\n    \"detail\": {\n    }\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"false\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"false\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Patch a step",
-                                                                "description": "Partial update - only updates the supplied attributes. NOTE: to set a null value, you must use `PUT` instead.\n\n",
-                                                                "method": "PATCH",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"stepType\": \"DesignConcepts\",\n    \"closed\": \"true\",\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"stepType\": \"DesignConcepts\",\n    \"closed\": \"true\",\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"DesignConcepts\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"DesignConcepts\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Delete a step",
-                                                                "description": "",
-                                                                "method": "DELETE",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": null\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": null\n    }\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -4552,33 +4057,10 @@ window.FIXTURES = {
                                                                                 ]
                                                                         }
                                                                 ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "element": "category",
-                                "attributes": {
-                                        "name": "work events"
-                                },
-                                "content": [
-                                        {
-                                                "element": "copy",
-                                                "content": "Currently events are generated only for `app-project` work objects.\n\nA work event has the following attributes:\n\n+ `workId`: Id of the work object the events are associated with\n\n+ `eventType`: Currently the only type is `timeline`\n\n+ `eventSubType`: a sub-categorization of the type of event.\n\n+ `sourceObjectType`: the type of object contained in the `sourceObjectContent` attribute. The current types are `app-project` and `challengedata`\n\n+ `sourceObjectContent`: the object is an `app-project` or `challengedata`\n\n\n**challengedata**\n\nA challengedata object contains information about a challenge state transition. It\nhas the following attributes:\n\n+ `challengeId`: Id of the topcoder challenge\n\n+ `tcDirectId`: Id of the topcoder Direct project associated with the challenge\n\n+ `phase`: The phase that the challenge is transitioning **from**. Current values are `Registration` and `Submission`\n\n+ `registrants`: An array of objects with a `handle` attribute. The handle is the topcoder user handle\n\n+ `submissions`: An array of objects with a `submissionId` attribute. The submissionId is the id of the topcoder submission\n\n\n"
-                                        },
-                                        {
-                                                "element": "resource",
-                                                "name": "Retrieve work events",
-                                                "description": "",
-                                                "uriTemplate": "/work/{workId}/events",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
+                                                        },
                                                         {
                                                                 "name": "Retrieve work events",
-                                                                "description": "Retrieves an event timeline for a work object. \n\n",
+                                                                "description": "Retrieves an event timeline for a work object. \nCurrently events are generated only for `app-project` work objects.\n\nA work event has the following attributes:\n\n+ `workId`: Id of the work object the events are associated with\n\n+ `eventType`: Currently the only type is `timeline`\n\n+ `eventSubType`: a sub-categorization of the type of event.\n\n+ `sourceObjectType`: the type of object contained in the `sourceObjectContent` attribute. The current types are `app-project` and `challengedata`\n\n+ `sourceObjectContent`: the object is an `app-project` or `challengedata`\n\n\n**challengedata**\n\nA challengedata object contains information about a challenge state transition. It\nhas the following attributes:\n\n+ `challengeId`: Id of the topcoder challenge\n\n+ `tcDirectId`: Id of the topcoder Direct project associated with the challenge\n\n+ `phase`: The phase that the challenge is transitioning **from**. Current values are `Registration` and `Submission`\n\n+ `registrants`: An array of objects with a `handle` attribute. The handle is the topcoder user handle\n\n+ `submissions`: An array of objects with a `submissionId` attribute. The submissionId is the id of the topcoder submission\n\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [
                                                                         {
@@ -4640,18 +4122,7 @@ window.FIXTURES = {
                                                                                 ]
                                                                         }
                                                                 ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        },
-                                        {
-                                                "element": "resource",
-                                                "name": "Retrieve a specific work event",
-                                                "description": "",
-                                                "uriTemplate": "/work/{workId}/events/{eventId}",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
+                                                        },
                                                         {
                                                                 "name": "Retrieve a specific work event",
                                                                 "description": "",
@@ -4719,475 +4190,6 @@ window.FIXTURES = {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
                                                                                                                 "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff1\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436465238043-e51c4699-6a8c-48c7-95d1-fd6c50dca93c\",\n            \"modifiedBy\": null,\n            \"modifiedAt\": \"2015-07-09T11:07:18.043-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": null,\n            \"ownerId\": null,\n            \"version\": 1,\n            \"workId\": \"1436460345790-a58ebe97-4a26-4a6c-8fa7-e35dc2b32d9c\",\n            \"sourceObjectType\": \"challengedata\",\n            \"eventType\": \"timeline\",\n            \"eventSubType\": \"Registration\",\n            \"sourceObjectContent\": {\n                \"challengeId\": \"30049280\",\n                \"tcDirectId\": \"8646\",\n                \"registrants\": [\n                    {\n                        \"handle\": \"reguser\"\n                    }\n                ],\n                \"submissions\": null,\n                \"phase\": \"Registration\",\n                \"phaseStatus\": \"Open\",\n                \"userId\": null,\n                \"workRequestId\": \"1436460345790-a58ebe97-4a26-4a6c-8fa7-e35dc2b32d9c\"\n            },\n            \"userId\": null\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        }
-                                                ],
-                                                "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "element": "category",
-                                "attributes": {
-                                        "name": "work steps"
-                                },
-                                "content": [
-                                        {
-                                                "element": "resource",
-                                                "name": "Step Management",
-                                                "description": "Work steps are steps taken during the progression of a unit of work from start\nto completion. A step is analagous to a milestone. Note that work steps only apply\nto work with a model type of `app-project`\n\nSteps contain the following attributes\n\n+ `stepType`: (required) the type of step. The value must be one of \nRegistration, DesignConcepts, CheckpointReview, FinalReview, FinalFixes, Other\n\n+ `startsAt`: (required) a date/time when the step starts\n\n+ `endsAt`: (required) a date/time when the step ends. It must occur after `startsAt`\n\n+ `closed`: whether the step is active (false) or closed (true)\n\n+ `detail`: a client specific object\n\n",
-                                                "uriTemplate": "/work/{workId}/steps",
-                                                "model": {},
-                                                "parameters": [],
-                                                "actions": [
-                                                        {
-                                                                "name": "Add a step",
-                                                                "description": "",
-                                                                "method": "POST",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": ""
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": \n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": \n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Retrieve all steps",
-                                                                "description": "",
-                                                                "method": "GET",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": ""
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"registration\",\n                \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n                \"closed\": \"true\",\n                \"detail\": {\n                }\n            },\n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"registration\",\n                \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n                \"closed\": \"true\",\n                \"detail\": {\n                }\n            },\n            {\n                \"id\": \"1436460443827-65e55dfe-4bf7-4df3-9e82-1b3c48ecee2f\",\n                \"modifiedBy\": \"40097202\",\n                \"modifiedAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"createdBy\": \"40097202\",\n                \"createdAt\": \"2015-07-09T09:47:23.827-07:00\",\n                \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n                \"stepType\": \"designConcepts\",\n                \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n                \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n                \"closed\": \"true\"\n                \"detail\": {\n                    \"numberOfRanks\": 5,\n                    \"rankedSubmissions\": [\n                        {\n                            \"rank\": 1,\n                            \"submissionId\": \"12345\"\n                        },\n                        {\n                            \"rank\": 2,\n                            \"submissionId\": \"12346\"\n                        },\n                        {\n                            \"rank\": 3,\n                            \"submissionId\": \"12347\"\n                        },\n                        {\n                            \"rank\": 4,\n                            \"submissionId\": \"12348\"\n                        },\n                        {\n                            \"rank\": 5,\n                            \"submissionId\": \"12349\"\n                        },\n                    ],\n                    \"customerFinalizedRanks\": true,\n                    \"submissions\": [\n                        {\n                            \"submissionSetId\": \"20000\"\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Retrieve a step",
-                                                                "description": "",
-                                                                "method": "GET",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Update a step",
-                                                                "description": "",
-                                                                "method": "PUT",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"stepType\": \"registration\",\n    \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n    \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n    \"closed\": \"false\",\n    \"detail\": {\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"stepType\": \"registration\",\n    \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n    \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n    \"closed\": \"false\",\n    \"detail\": {\n    }\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"false\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"registration\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"false\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Patch a step",
-                                                                "description": "Partial update - only updates the supplied attributes. NOTE: to set a null value, you must use `PUT` instead.\n\n",
-                                                                "method": "PATCH",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"stepType\": \"DesignConcepts\",\n    \"closed\": \"true\",\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"stepType\": \"DesignConcepts\",\n    \"closed\": \"true\",\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"DesignConcepts\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50\",\n            \"modifiedBy\": \"40097202\",\n            \"modifiedAt\": \"2015-08-09T09:45:45.901-07:00\",\n            \"createdBy\": \"40097202\",\n            \"createdAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"workId\": \"1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da\",\n            \"stepType\": \"DesignConcepts\",\n            \"startsAt\": \"2015-07-09T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-16T09:45:45.901-07:00\",\n            \"closed\": \"true\",\n            \"detail\": {\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        }
-                                                                ]
-                                                        },
-                                                        {
-                                                                "name": "Delete a step",
-                                                                "description": "",
-                                                                "method": "DELETE",
-                                                                "parameters": [
-                                                                        {
-                                                                                "name": "workId",
-                                                                                "description": "the id of the work object",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1435677908878-f5e91b34-9ea1-407d-b882-0022ea2de0da",
-                                                                                "values": []
-                                                                        },
-                                                                        {
-                                                                                "name": "stepId",
-                                                                                "description": "the id of the step",
-                                                                                "type": "string",
-                                                                                "required": true,
-                                                                                "default": "",
-                                                                                "example": "1436460345901-e39b039d-d3e0-450d-8c89-ff0d3a5fda50",
-                                                                                "values": []
-                                                                        }
-                                                                ],
-                                                                "attributes": {
-                                                                        "relation": "",
-                                                                        "uriTemplate": "/work/{workId}/steps/{stepId}"
-                                                                },
-                                                                "content": [],
-                                                                "examples": [
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/x-www-form-urlencoded"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "",
-                                                                                                "schema": "",
-                                                                                                "content": []
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": null\n    }\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"id\": \"36b5ae4:14e73b40167:-7ff2\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": null\n    }\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -6565,7 +5567,7 @@ window.FIXTURES = {
                                                         {
                                                                 "name": "Update an existing message",
                                                                 "description": "",
-                                                                "method": "PATCH",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -6962,7 +5964,7 @@ window.FIXTURES = {
                                                         {
                                                                 "name": "Update an existing message",
                                                                 "description": "",
-                                                                "method": "PATCH",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -7033,43 +6035,43 @@ window.FIXTURES = {
                         }
                 ],
                 "name": "ASP Application Service (Draft)",
-                "description": "The application layer service collects data from backend and provides them to frontend. It follows the v3 API spec defined in [here](https://docs.google.com/presentation/d/15pucEI0MHj9y778EyaAWGh4MBH-I73i1-GS0ir7FhxE/edit#slide=id.g29c3ffcc3_053).\n\n",
+                "description": "As part of the application service submissions offers API's to access the submissions list or view a specific one. Messaging follows the v3 API spec defined in [here](https://docs.google.com/presentation/d/15pucEI0MHj9y778EyaAWGh4MBH-I73i1-GS0ir7FhxE/edit#slide=id.g29c3ffcc3_053).\n\n",
                 "element": "category",
                 "resourceGroups": [
                         {
-                                "name": "Work Steps",
+                                "name": "",
                                 "description": "",
                                 "resources": [
                                         {
                                                 "element": "resource",
-                                                "name": "A collection of steps",
-                                                "description": "",
-                                                "uriTemplate": "/projects/{work_id}/steps{?stepType}",
+                                                "name": "Submissions",
+                                                "description": "A Submission group has the following attributes:\n\n+ work - the object describing the work that the submissions belong to\n\n+ phase - the object describing the phase that the submissions belong to\n\n+ numberOfRanks - total number of ranks that the submission group has\n\n+ confirmed - whether the submissions have been confirmed or not, default to be null\n\n+ submissions - list of submission objects within the submission group\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions?filter=phase=in(concept,final)",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "stepType",
-                                                                "description": "Type of the  work step, can be designConcepts, completeDesigns or finalFixes",
+                                                                "name": "phase",
+                                                                "description": "phase of the work submisssions, either \"concept\" or \"final\"; if not provided, return all the phases up to date",
                                                                 "type": "string",
                                                                 "required": false,
                                                                 "default": "",
-                                                                "example": "designConcepts",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a collection of steps",
-                                                                "description": "Get all the work steps for the given project_id and work type\n\n",
+                                                                "name": "Get all the submissions",
+                                                                "description": "Get all the submissions for the given work and phase.\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [],
                                                                 "attributes": {
@@ -7092,7 +6094,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"nextStartDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"numberOfRanks\": \"5\",\n            \"confirmed\": null,\n            \"submissions\": [{\n                \"id\": \"1234\",\n                \"submitter\": {\n                    \"id\": \"123456\",\n                    \"handle\": \"Batman\",\n                    \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\": 0,\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234567\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234568\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234569\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234570\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234571\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234572\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            },\n            {\n                \"id\": \"1235\",\n                \"submitter\": {\n                \"id\": \"123457\",\n                \"handle\": \"Batman\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\":\"0\",\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234573\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234574\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234575\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234576\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234577\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234578\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7100,9 +6102,59 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"nextStartDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"numberOfRanks\": \"5\",\n            \"confirmed\": null,\n            \"submissions\": [{\n                \"id\": \"1234\",\n                \"submitter\": {\n                    \"id\": \"123456\",\n                    \"handle\": \"Batman\",\n                    \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\": 0,\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234567\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234568\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234569\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234570\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234571\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234572\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            },\n            {\n                \"id\": \"1235\",\n                \"submitter\": {\n                \"id\": \"123457\",\n                \"handle\": \"Batman\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\":\"0\",\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234573\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234574\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234575\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234576\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234577\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234578\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Update submissions",
+                                                                "description": "Update the confirmation of the submissions.\n    \n",
+                                                                "method": "PUT",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7113,34 +6165,34 @@ window.FIXTURES = {
                                         },
                                         {
                                                 "element": "resource",
-                                                "name": "A step",
-                                                "description": "The following properties may be PATCHed **one at a time**:\n\n+ rankedSubmissions\n\n+ customerConfirmedRanks\n\n+ customerAcceptedFixes\n\n",
-                                                "uriTemplate": "/projects/{work_id}/steps/{step_id}",
+                                                "name": "A Submission",
+                                                "description": "A Submission object has the following attributes:\n\n+ submitter - the object describing the submitter\n\n+ rank - rank of the submission\n\n+ createdAt - the time when the submission is created\n\n+ files - list of file objects associated with the submission\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions/{submission_id}",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "step_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "name": "submission_id",
+                                                                "description": "ID of the submission in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a step",
-                                                                "description": "",
+                                                                "name": "Get a submission",
+                                                                "description": "Get information about a submission based on the given submission id.\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [],
                                                                 "attributes": {
@@ -7163,7 +6215,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"123\",\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"rank\": 1,\n            \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7171,7 +6223,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"123\",\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"rank\": 1,\n            \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7180,9 +6232,9 @@ window.FIXTURES = {
                                                                 ]
                                                         },
                                                         {
-                                                                "name": "Update a step",
-                                                                "description": "Update partial information of a work step with PATCH\n\n",
-                                                                "method": "PATCH",
+                                                                "name": "Update a submission",
+                                                                "description": "Update the rank of the submission.\n\n",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -7203,7 +6255,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n    ]\n}\n",
+                                                                                                "body": "{\n    \"rank\": \"1\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7211,132 +6263,19 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n    ]\n}\n"
+                                                                                                                "content": "{\n    \"rank\": \"1\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
                                                                                 ],
                                                                                 "responses": [
                                                                                         {
-                                                                                                "name": "200",
+                                                                                                "name": "204",
                                                                                                 "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "headers": [],
+                                                                                                "body": "",
                                                                                                 "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        },
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"customerConfirmedRanks\": true\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"customerConfirmedRanks\": true\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        },
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"customerAcceptedFixes\": true\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"customerAcceptedFixes\": true\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7347,35 +6286,147 @@ window.FIXTURES = {
                                         },
                                         {
                                                 "element": "resource",
-                                                "name": "A collection of submissions",
+                                                "name": "Final Fixes",
+                                                "description": "A final-fixes object has the following attributes:\n\n+ work - the object describing the work that the final-fixes belong to\n\n+ phase - the object describing the phase that the final-fixes belong to\n\n+ downloadUrl\n\n+ confirmed - whether the submissions have been confirmed or not, default to be null\n\n+ submitter - the object describing the submitter\n\n+ files - list of file objects associated with the submission\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions/final-fixes",
+                                                "model": {},
+                                                "parameters": [
+                                                        {
+                                                                "name": "work_id",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
+                                                                "required": true,
+                                                                "default": "",
+                                                                "example": "",
+                                                                "values": []
+                                                        }
+                                                ],
+                                                "actions": [
+                                                        {
+                                                                "name": "Get submission final fixes",
+                                                                "description": "Get information about submission final fixes for the work.\n\n",
+                                                                "method": "GET",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"id\": \"abc\",\n            \"downloadUrl\": \"http://www.google.com/url\",\n            \"confirmed\": null,\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"id\": \"abc\",\n            \"downloadUrl\": \"http://www.google.com/url\",\n            \"confirmed\": null,\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Update the final fixes",
+                                                                "description": "Update the confirmation of final fixes of the submissions.\n    \n",
+                                                                "method": "PUT",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        }
+                                                ],
+                                                "content": []
+                                        },
+                                        {
+                                                "element": "resource",
+                                                "name": "File",
                                                 "description": "",
-                                                "uriTemplate": "/projects/{work_id}/steps/{step_id}/submissions",
+                                                "uriTemplate": "/projects/{work_id}/submissions/file/{file_id}",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "step_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "name": "file_id",
+                                                                "description": "ID of the file to be accepted",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a collection of submissions",
-                                                                "description": "Get all the submissions under the given work step\n\n",
-                                                                "method": "GET",
+                                                                "name": "Accept a submission file",
+                                                                "description": "",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -7386,10 +6437,9 @@ window.FIXTURES = {
                                                                         {
                                                                                 "name": "",
                                                                                 "description": "",
-                                                                                "requests": [],
-                                                                                "responses": [
+                                                                                "requests": [
                                                                                         {
-                                                                                                "name": "200",
+                                                                                                "name": "",
                                                                                                 "description": "",
                                                                                                 "headers": [
                                                                                                         {
@@ -7397,7 +6447,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"def\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"ghi\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"accepted\": true\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7405,9 +6455,19 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"def\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"ghi\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"accepted\": true\n}\n"
                                                                                                         }
                                                                                                 ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7415,17 +6475,11 @@ window.FIXTURES = {
                                                         }
                                                 ],
                                                 "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "name": "Timeline",
-                                "description": "",
-                                "resources": [
+                                        },
                                         {
                                                 "element": "resource",
                                                 "name": "Timeline Events",
-                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n+ confirmEmail - the object describing the work event that a confirmation email has been sent \n\n+ assignCopilot - the object describing the work event that a copilot has been assigned\n\n+ quote - the object describing the work event about estimation of the project\n\n+ paymentAccepted - the object describing the work event that whether the payment has been accepted or not\n\n+ launch -  the object describing the work event that the project has been launched\n\n+ members - a list of members who have joined the project\n\n+ lastMessage -  the object describing the last (unread) message in a launch event\n\n+ desingConcepts -  the object describing the phase of deisgn concepts\n\n+ finalDesigns - the object describing the phase of final deisgns\n\n+ finalFixexs -  the object describing the phase of final fixes\n\n+ completed - the object describing the work event that whether the project has been completed or not\n\n",
+                                                "description": "Authroization header has to be provided along with this request to identify the user.\n\n",
                                                 "uriTemplate": "/work/{work_id}/timeline",
                                                 "model": {},
                                                 "parameters": [
@@ -7465,7 +6519,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    },\n                    {\n                        \"type\": \"copilotAssigned\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"copilot\": {\n                            \"id\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"quoteInfo\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"memberRegistration\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"threadInfo\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessage\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"handle\": \"Batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"submissionThreadsInfo\",\n                        \"threadInfo\": {\n                            \"type\": \"threadInfo\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessage\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"handle\": \"Batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"confirmEmail\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"address\": \"john@example.com\"\n            },\n            \"assignCopilot\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"userId\": 123,\n                \"handle\": \"Batman\"\n            },\n            \"quote\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"price\": 1500,\n                \"duration\": 20,\n                \"accepted\": true\n            },\n            \"paymentAccepted\": {\n                \"created\": \"12:30pm April 5 2015\"\n            },\n            \"launch\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }]\n            },\n            \"members\": [{\n                \"created\": \"12:30pm April 5 2015\",\n                \"handle\": \"Batman #{i}\",\n                \"avatar\": \"avatar\"\n            }],\n            \"lastMessage\": {\n                \"avatar\": \"avatar\",\n                \"handle\": \"Batman\",\n                \"notification\": 5,\n                \"threadId\": \"abc123\",\n                \"message\": \"Maybe its best if we stick with something something something something.\"\n            },\n            \"designConcepts\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalDesigns\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalFixes\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\",\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n            },\n            \"completed\": {\n                \"created\": \"12:30pm April 5 2015\"\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7473,7 +6527,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    },\n                    {\n                        \"type\": \"copilotAssigned\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"copilot\": {\n                            \"id\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"quoteInfo\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"memberRegistration\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"threadInfo\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessage\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"handle\": \"Batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"submissionThreadsInfo\",\n                        \"threadInfo\": {\n                            \"type\": \"threadInfo\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessage\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"handle\": \"Batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"confirmEmail\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"address\": \"john@example.com\"\n            },\n            \"assignCopilot\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"userId\": 123,\n                \"handle\": \"Batman\"\n            },\n            \"quote\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"price\": 1500,\n                \"duration\": 20,\n                \"accepted\": true\n            },\n            \"paymentAccepted\": {\n                \"created\": \"12:30pm April 5 2015\"\n            },\n            \"launch\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }]\n            },\n            \"members\": [{\n                \"created\": \"12:30pm April 5 2015\",\n                \"handle\": \"Batman #{i}\",\n                \"avatar\": \"avatar\"\n            }],\n            \"lastMessage\": {\n                \"avatar\": \"avatar\",\n                \"handle\": \"Batman\",\n                \"notification\": 5,\n                \"threadId\": \"abc123\",\n                \"message\": \"Maybe its best if we stick with something something something something.\"\n            },\n            \"designConcepts\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalDesigns\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalFixes\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\",\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n            },\n            \"completed\": {\n                \"created\": \"12:30pm April 5 2015\"\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7490,40 +6544,37 @@ window.FIXTURES = {
                 "content": [
                         {
                                 "element": "category",
-                                "attributes": {
-                                        "name": "Work Steps"
-                                },
                                 "content": [
                                         {
                                                 "element": "resource",
-                                                "name": "A collection of steps",
-                                                "description": "",
-                                                "uriTemplate": "/projects/{work_id}/steps{?stepType}",
+                                                "name": "Submissions",
+                                                "description": "A Submission group has the following attributes:\n\n+ work - the object describing the work that the submissions belong to\n\n+ phase - the object describing the phase that the submissions belong to\n\n+ numberOfRanks - total number of ranks that the submission group has\n\n+ confirmed - whether the submissions have been confirmed or not, default to be null\n\n+ submissions - list of submission objects within the submission group\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions?filter=phase=in(concept,final)",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "stepType",
-                                                                "description": "Type of the  work step, can be designConcepts, completeDesigns or finalFixes",
+                                                                "name": "phase",
+                                                                "description": "phase of the work submisssions, either \"concept\" or \"final\"; if not provided, return all the phases up to date",
                                                                 "type": "string",
                                                                 "required": false,
                                                                 "default": "",
-                                                                "example": "designConcepts",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a collection of steps",
-                                                                "description": "Get all the work steps for the given project_id and work type\n\n",
+                                                                "name": "Get all the submissions",
+                                                                "description": "Get all the submissions for the given work and phase.\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [],
                                                                 "attributes": {
@@ -7546,7 +6597,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"nextStartDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"numberOfRanks\": \"5\",\n            \"confirmed\": null,\n            \"submissions\": [{\n                \"id\": \"1234\",\n                \"submitter\": {\n                    \"id\": \"123456\",\n                    \"handle\": \"Batman\",\n                    \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\": 0,\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234567\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234568\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234569\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234570\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234571\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234572\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            },\n            {\n                \"id\": \"1235\",\n                \"submitter\": {\n                \"id\": \"123457\",\n                \"handle\": \"Batman\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\":\"0\",\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234573\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234574\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234575\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234576\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234577\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234578\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7554,9 +6605,59 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"nextStartDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"numberOfRanks\": \"5\",\n            \"confirmed\": null,\n            \"submissions\": [{\n                \"id\": \"1234\",\n                \"submitter\": {\n                    \"id\": \"123456\",\n                    \"handle\": \"Batman\",\n                    \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\": 0,\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234567\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234568\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234569\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234570\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234571\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234572\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            },\n            {\n                \"id\": \"1235\",\n                \"submitter\": {\n                \"id\": \"123457\",\n                \"handle\": \"Batman\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                \"rank\":\"0\",\n                \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n                \"downloadUrl\": \"https://s3.amazonaws.com/topcoder-dev-media/app-project/40135590/1437590106941-5bc6794b-7fa9-48ae-8a5e-93f678bab4fc/brief/screen1.png\",\n                \"files\": [{\n                    \"id\": \"1234573\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234574\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234575\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234576\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234577\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                    },\n                    {\n                    \"id\": \"1234578\",\n                    \"name\": \"BatBaby\",\n                    \"accepted\": true,\n                    \"downloadUrl\": \"http://www.google.com/url\",\n                    \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                }]\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Update submissions",
+                                                                "description": "Update the confirmation of the submissions.\n    \n",
+                                                                "method": "PUT",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7567,34 +6668,34 @@ window.FIXTURES = {
                                         },
                                         {
                                                 "element": "resource",
-                                                "name": "A step",
-                                                "description": "The following properties may be PATCHed **one at a time**:\n\n+ rankedSubmissions\n\n+ customerConfirmedRanks\n\n+ customerAcceptedFixes\n\n",
-                                                "uriTemplate": "/projects/{work_id}/steps/{step_id}",
+                                                "name": "A Submission",
+                                                "description": "A Submission object has the following attributes:\n\n+ submitter - the object describing the submitter\n\n+ rank - rank of the submission\n\n+ createdAt - the time when the submission is created\n\n+ files - list of file objects associated with the submission\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions/{submission_id}",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "step_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "name": "submission_id",
+                                                                "description": "ID of the submission in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a step",
-                                                                "description": "",
+                                                                "name": "Get a submission",
+                                                                "description": "Get information about a submission based on the given submission id.\n\n",
                                                                 "method": "GET",
                                                                 "parameters": [],
                                                                 "attributes": {
@@ -7617,7 +6718,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"123\",\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"rank\": 1,\n            \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7625,7 +6726,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"123\",\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"rank\": 1,\n            \"createdAt\": \"2008-10-15T05:08:00.000-0400\",\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7634,9 +6735,9 @@ window.FIXTURES = {
                                                                 ]
                                                         },
                                                         {
-                                                                "name": "Update a step",
-                                                                "description": "Update partial information of a work step with PATCH\n\n",
-                                                                "method": "PATCH",
+                                                                "name": "Update a submission",
+                                                                "description": "Update the rank of the submission.\n\n",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -7657,7 +6758,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n    ]\n}\n",
+                                                                                                "body": "{\n    \"rank\": \"1\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7665,132 +6766,19 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n    ]\n}\n"
+                                                                                                                "content": "{\n    \"rank\": \"1\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
                                                                                 ],
                                                                                 "responses": [
                                                                                         {
-                                                                                                "name": "200",
+                                                                                                "name": "204",
                                                                                                 "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "headers": [],
+                                                                                                "body": "",
                                                                                                 "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        },
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"customerConfirmedRanks\": true\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"customerConfirmedRanks\": true\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ]
-                                                                        },
-                                                                        {
-                                                                                "name": "",
-                                                                                "description": "",
-                                                                                "requests": [
-                                                                                        {
-                                                                                                "name": "",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n    \"customerAcceptedFixes\": true\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n    \"customerAcceptedFixes\": true\n}\n"
-                                                                                                        }
-                                                                                                ]
-                                                                                        }
-                                                                                ],
-                                                                                "responses": [
-                                                                                        {
-                                                                                                "name": "200",
-                                                                                                "description": "",
-                                                                                                "headers": [
-                                                                                                        {
-                                                                                                                "name": "Content-Type",
-                                                                                                                "value": "application/json"
-                                                                                                        }
-                                                                                                ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
-                                                                                                "schema": "",
-                                                                                                "content": [
-                                                                                                        {
-                                                                                                                "element": "asset",
-                                                                                                                "attributes": {
-                                                                                                                        "role": "bodyExample"
-                                                                                                                },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
-                                                                                                        }
-                                                                                                ]
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7801,35 +6789,147 @@ window.FIXTURES = {
                                         },
                                         {
                                                 "element": "resource",
-                                                "name": "A collection of submissions",
+                                                "name": "Final Fixes",
+                                                "description": "A final-fixes object has the following attributes:\n\n+ work - the object describing the work that the final-fixes belong to\n\n+ phase - the object describing the phase that the final-fixes belong to\n\n+ downloadUrl\n\n+ confirmed - whether the submissions have been confirmed or not, default to be null\n\n+ submitter - the object describing the submitter\n\n+ files - list of file objects associated with the submission\n\n",
+                                                "uriTemplate": "/projects/{work_id}/submissions/final-fixes",
+                                                "model": {},
+                                                "parameters": [
+                                                        {
+                                                                "name": "work_id",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
+                                                                "required": true,
+                                                                "default": "",
+                                                                "example": "",
+                                                                "values": []
+                                                        }
+                                                ],
+                                                "actions": [
+                                                        {
+                                                                "name": "Get submission final fixes",
+                                                                "description": "Get information about submission final fixes for the work.\n\n",
+                                                                "method": "GET",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"id\": \"abc\",\n            \"downloadUrl\": \"http://www.google.com/url\",\n            \"confirmed\": null,\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"work\": {\n                \"name\": \"IBM Internal HR\",\n                \"type\": \"mobile app\"\n            },\n            \"phase\": {\n                \"startDate\": \"2008-10-15T05:08:00.000-0400\",\n                \"endDate\": \"2008-10-15T05:08:00.000-0400\"\n            },\n            \"id\": \"abc\",\n            \"downloadUrl\": \"http://www.google.com/url\",\n            \"confirmed\": null,\n            \"submitter\": {\n                \"id\": \"123\",\n                \"handle\": \"Alpha User\",\n                \"avatarUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            },\n            \"files\": [{\n                \"id\": \"1234567\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234568\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234569\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234570\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234571\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n                },\n                {\n                \"id\": \"1234572\",\n                \"name\": \"BatBaby\",\n                \"accepted\": true,\n                \"downloadUrl\": \"http://www.google.com/url\",\n                \"thumbnailUrl\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n            }]\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Update the final fixes",
+                                                                "description": "Update the confirmation of final fixes of the submissions.\n    \n",
+                                                                "method": "PUT",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [
+                                                                                                        {
+                                                                                                                "name": "Content-Type",
+                                                                                                                "value": "application/json"
+                                                                                                        }
+                                                                                                ],
+                                                                                                "body": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"confirmed\": \"2015-05-05T20:53:41.467Z\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        }
+                                                ],
+                                                "content": []
+                                        },
+                                        {
+                                                "element": "resource",
+                                                "name": "File",
                                                 "description": "",
-                                                "uriTemplate": "/projects/{work_id}/steps/{step_id}/submissions",
+                                                "uriTemplate": "/projects/{work_id}/submissions/file/{file_id}",
                                                 "model": {},
                                                 "parameters": [
                                                         {
                                                                 "name": "work_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "description": "ID of the work in form of an integer",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         },
                                                         {
-                                                                "name": "step_id",
-                                                                "description": "",
-                                                                "type": "string",
+                                                                "name": "file_id",
+                                                                "description": "ID of the file to be accepted",
+                                                                "type": "number",
                                                                 "required": true,
                                                                 "default": "",
-                                                                "example": "abc",
+                                                                "example": "",
                                                                 "values": []
                                                         }
                                                 ],
                                                 "actions": [
                                                         {
-                                                                "name": "Get a collection of submissions",
-                                                                "description": "Get all the submissions under the given work step\n\n",
-                                                                "method": "GET",
+                                                                "name": "Accept a submission file",
+                                                                "description": "",
+                                                                "method": "PUT",
                                                                 "parameters": [],
                                                                 "attributes": {
                                                                         "relation": "",
@@ -7840,10 +6940,9 @@ window.FIXTURES = {
                                                                         {
                                                                                 "name": "",
                                                                                 "description": "",
-                                                                                "requests": [],
-                                                                                "responses": [
+                                                                                "requests": [
                                                                                         {
-                                                                                                "name": "200",
+                                                                                                "name": "",
                                                                                                 "description": "",
                                                                                                 "headers": [
                                                                                                         {
@@ -7851,7 +6950,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"def\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"ghi\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"accepted\": true\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7859,9 +6958,19 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"def\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"id\": \"ghi\",\n        \"createdAt\": \"2015-05-05T20:53:41.467Z\",\n        \"downloadUrl\": \"http://placehold.it/400x800\",\n        \"submitter\": {\n          \"id\": \"abc\",\n          \"handle\": \"Darth Vader\",\n          \"avatar\": \"http://www.topcoder.com/i/m/cardiboy_big.jpg\"\n        },\n        \"files\": [\n          {\n            \"id\": \"abc\",\n            \"name\": \"super-generic-file-1.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 1,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-azax05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"def\",\n            \"name\": \"super-generic-file-2.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 2,\n                \"messages\": [\n                  {\n                    \"id\": \"abc\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": false\n                  },\n                  {\n                    \"id\": \"def\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Another deeply insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"aselbie\",\n                    \"read\": false\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": \"ghi\",\n            \"name\": \"super-generic-file-3.jpg\",\n            \"images\": {\n              \"thumbnail\": \"http://placehold.it/50x40\",\n              \"small\": \"http://placehold.it/160x130\",\n              \"large\": \"http://placehold.it/200x400\",\n              \"full\": \"http://placehold.it/400x800\"\n            },\n            \"threads\": [\n              {\n                \"id\": \"guid-or-identifier-for-thread-object\",\n                \"subject\": \"Messages for file\",\n                \"unreadCount\": 0,\n                \"messages\": [\n                  {\n                    \"id\": \"guid-or-identifier-for-message-object\",\n                    \"threadId\": \"guid-or-identifier-for-thread-object\",\n                    \"body\": \"Some insightful comment about this file.\",\n                    \"createdAt\": \"2015-11-05T08:15:30-05:00\",\n                    \"publisherId\": \"sselvadurai\",\n                    \"read\": true\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"accepted\": true\n}\n"
                                                                                                         }
                                                                                                 ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "204",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
                                                                                         }
                                                                                 ]
                                                                         }
@@ -7869,19 +6978,11 @@ window.FIXTURES = {
                                                         }
                                                 ],
                                                 "content": []
-                                        }
-                                ]
-                        },
-                        {
-                                "element": "category",
-                                "attributes": {
-                                        "name": "Timeline"
-                                },
-                                "content": [
+                                        },
                                         {
                                                 "element": "resource",
                                                 "name": "Timeline Events",
-                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n+ confirmEmail - the object describing the work event that a confirmation email has been sent \n\n+ assignCopilot - the object describing the work event that a copilot has been assigned\n\n+ quote - the object describing the work event about estimation of the project\n\n+ paymentAccepted - the object describing the work event that whether the payment has been accepted or not\n\n+ launch -  the object describing the work event that the project has been launched\n\n+ members - a list of members who have joined the project\n\n+ lastMessage -  the object describing the last (unread) message in a launch event\n\n+ desingConcepts -  the object describing the phase of deisgn concepts\n\n+ finalDesigns - the object describing the phase of final deisgns\n\n+ finalFixexs -  the object describing the phase of final fixes\n\n+ completed - the object describing the work event that whether the project has been completed or not\n\n",
+                                                "description": "Authroization header has to be provided along with this request to identify the user.\n\n",
                                                 "uriTemplate": "/work/{work_id}/timeline",
                                                 "model": {},
                                                 "parameters": [
@@ -7921,7 +7022,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    },\n                    {\n                        \"type\": \"copilotAssigned\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"copilot\": {\n                            \"id\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"quoteInfo\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"memberRegistration\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"threadInfo\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessage\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"handle\": \"Batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"submissionThreadsInfo\",\n                        \"threadInfo\": {\n                            \"type\": \"threadInfo\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessage\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"handle\": \"Batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"confirmEmail\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"address\": \"john@example.com\"\n            },\n            \"assignCopilot\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"userId\": 123,\n                \"handle\": \"Batman\"\n            },\n            \"quote\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"price\": 1500,\n                \"duration\": 20,\n                \"accepted\": true\n            },\n            \"paymentAccepted\": {\n                \"created\": \"12:30pm April 5 2015\"\n            },\n            \"launch\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }]\n            },\n            \"members\": [{\n                \"created\": \"12:30pm April 5 2015\",\n                \"handle\": \"Batman #{i}\",\n                \"avatar\": \"avatar\"\n            }],\n            \"lastMessage\": {\n                \"avatar\": \"avatar\",\n                \"handle\": \"Batman\",\n                \"notification\": 5,\n                \"threadId\": \"abc123\",\n                \"message\": \"Maybe its best if we stick with something something something something.\"\n            },\n            \"designConcepts\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalDesigns\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalFixes\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\",\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n            },\n            \"completed\": {\n                \"created\": \"12:30pm April 5 2015\"\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7929,7 +7030,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    },\n                    {\n                        \"type\": \"copilotAssigned\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"copilot\": {\n                            \"id\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"quoteInfo\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"statusUpdate\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"01-01-2001 09:09:09 PST\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"memberRegistration\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"threadInfo\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessage\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"handle\": \"Batman\",\n                            \"avatarUrl\": \"http://pict.ly\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"submissionThreadsInfo\",\n                        \"threadInfo\": {\n                            \"type\": \"threadInfo\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessage\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"handle\": \"Batman\",\n                                \"avatarUrl\": \"http://pict.ly\"\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"userAvatars\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"eventGroup\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"01-01-2001 09:09:09 PST\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"confirmEmail\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"address\": \"john@example.com\"\n            },\n            \"assignCopilot\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"userId\": 123,\n                \"handle\": \"Batman\"\n            },\n            \"quote\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"price\": 1500,\n                \"duration\": 20,\n                \"accepted\": true\n            },\n            \"paymentAccepted\": {\n                \"created\": \"12:30pm April 5 2015\"\n            },\n            \"launch\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }]\n            },\n            \"members\": [{\n                \"created\": \"12:30pm April 5 2015\",\n                \"handle\": \"Batman #{i}\",\n                \"avatar\": \"avatar\"\n            }],\n            \"lastMessage\": {\n                \"avatar\": \"avatar\",\n                \"handle\": \"Batman\",\n                \"notification\": 5,\n                \"threadId\": \"abc123\",\n                \"message\": \"Maybe its best if we stick with something something something something.\"\n            },\n            \"designConcepts\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalDesigns\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ],\n                \"winnerAvatars\": [\n                    \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n                ]\n            },\n            \"finalFixes\": {\n                \"created\": \"12:30pm April 5 2015\",\n                \"submissionUrl\": \"http://www.google.com\",\n                \"submissionAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\",\n                \"notificationCount\": 5,\n                \"comments\": [{\n                    \"avatar\": \"avatar\",\n                    \"handle\": \"Batman\",\n                    \"notification\": 5,\n                    \"threadId\": \"abc123\",\n                    \"fileName\": \"Project Requirement\"\n                }],\n                \"winnerAvatar\": \"http://www.freakpic.in/wp-content/uploads/2014/10/funny-avatar-6-300x300.jpg\"\n            },\n            \"completed\": {\n                \"created\": \"12:30pm April 5 2015\"\n            }\n        }\n    },\n    \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -13898,7 +12999,6 @@ if (typeof sinon == "undefined") {
   formatApiaryUriRegex = function(host, uriTemplate) {
     var params, path, ref1, uri;
     ref1 = uriTemplate.split('?'), path = ref1[0], params = ref1[1];
-    path = path.replace(/\{$/, '');
     uri = host + path;
     uri = uri.replace(/\{([a-zA-Z0-9_\\-]+)\}/g, '([a-zA-Z0-9_\\-]+)');
     return new RegExp(uri + '(\\?.*)?$');
