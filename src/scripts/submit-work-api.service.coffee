@@ -3,7 +3,7 @@
 transformResponse = (response) ->
   parsed = JSON.parse response
 
-  parsed?.result?.content || []
+  parsed?.result?.content
 
 srv = ($resource, API_URL) ->
   url = API_URL + '/v3/work/:id'
@@ -14,17 +14,16 @@ srv = ($resource, API_URL) ->
   methods =
     put:
       method           :'PUT'
-      isArray          : false
       transformResponse: transformResponse
 
     post:
       method           :'POST'
-      isArray          : false
       transformResponse: transformResponse
 
     get:
-      method           :'GET'
-      isArray          : true
+      transformResponse: transformResponse
+
+    query:
       transformResponse: transformResponse
 
   $resource url, params, methods
