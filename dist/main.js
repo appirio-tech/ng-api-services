@@ -348,7 +348,7 @@
   transformResponse = function(response) {
     var parsed, ref;
     parsed = JSON.parse(response);
-    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+    return parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0;
   };
 
   srv = function($resource, API_URL) {
@@ -360,17 +360,16 @@
     methods = {
       put: {
         method: 'PUT',
-        isArray: false,
         transformResponse: transformResponse
       },
       post: {
         method: 'POST',
-        isArray: false,
         transformResponse: transformResponse
       },
       get: {
-        method: 'GET',
-        isArray: true,
+        transformResponse: transformResponse
+      },
+      query: {
         transformResponse: transformResponse
       }
     };
