@@ -343,12 +343,20 @@
 
 (function() {
   'use strict';
-  var srv, transformResponse;
+  var srv, transformIdOnlyResponse, transformResponse;
 
   transformResponse = function(response) {
     var parsed, ref;
     parsed = JSON.parse(response);
     return parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0;
+  };
+
+  transformIdOnlyResponse = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return {
+      id: parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0
+    };
   };
 
   srv = function($resource, API_URL) {
@@ -360,11 +368,11 @@
     methods = {
       put: {
         method: 'PUT',
-        transformResponse: transformResponse
+        transformResponse: transformIdOnlyResponse
       },
       post: {
         method: 'POST',
-        transformResponse: transformResponse
+        transformResponse: transformIdOnlyResponse
       },
       get: {
         transformResponse: transformResponse
