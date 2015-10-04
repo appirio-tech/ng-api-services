@@ -17,7 +17,9 @@ updateRanks = (data) ->
     rankedSubmissions = data
 
   transformedData =
-    rankedSubmissions: rankedSubmissions
+    param:
+      details:
+        rankedSubmissions: rankedSubmissions
 
   JSON.stringify transformedData
 
@@ -28,7 +30,9 @@ confirmRanks = (data) ->
     customerConfirmedRanks = data
 
   transformedData =
-    customerConfirmedRanks: customerConfirmedRanks
+    param:
+      details:
+        customerConfirmedRanks: customerConfirmedRanks
 
   JSON.stringify transformedData
 
@@ -39,7 +43,9 @@ acceptFixes = (data) ->
     customerAcceptedFixes = data
 
   transformedData =
-    customerAcceptedFixes: customerAcceptedFixes
+    param:
+      details:
+        customerAcceptedFixes: customerAcceptedFixes
 
   JSON.stringify transformedData
 

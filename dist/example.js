@@ -2326,7 +2326,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    {\n        \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n        \"usageDescription\" : \"usage2222\",\n        \"features\" : [ {\n                \"name\" : \"feature1\",\n                \"description\" : \"desc1\"\n            }, {\n                \"name\" : \"feature2\",\n                \"description\" : \"desc2\"\n        } ],\n        \"modelType\": \"app-project\",\n        \"name\" : \"new project001\",\n        \"summary\" : \"test summary\",\n        \"requestType\":\"Design&Code\",\n        \"status\": \"Assigned\",\n        \"statusNotes\": \"noted\",\n        \"copilotId\": \"12345\",\n        \"tcDirectId\": \"23456\"\n    }\n}\n",
+                                                                                                "body": "{\n    \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n    \"usageDescription\" : \"usage2222\",\n    \"features\" : [ {\n            \"name\" : \"feature1\",\n            \"description\" : \"desc1\"\n        }, {\n            \"name\" : \"feature2\",\n            \"description\" : \"desc2\"\n    } ],\n    \"modelType\": \"app-project\",\n    \"name\" : \"new project001\",\n    \"summary\" : \"test summary\",\n    \"requestType\":\"Design&Code\",\n    \"status\": \"Assigned\",\n    \"statusNotes\": \"noted\",\n    \"copilotId\": \"12345\",\n    \"tcDirectId\": \"23456\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -2334,7 +2334,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    {\n        \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n        \"usageDescription\" : \"usage2222\",\n        \"features\" : [ {\n                \"name\" : \"feature1\",\n                \"description\" : \"desc1\"\n            }, {\n                \"name\" : \"feature2\",\n                \"description\" : \"desc2\"\n        } ],\n        \"modelType\": \"app-project\",\n        \"name\" : \"new project001\",\n        \"summary\" : \"test summary\",\n        \"requestType\":\"Design&Code\",\n        \"status\": \"Assigned\",\n        \"statusNotes\": \"noted\",\n        \"copilotId\": \"12345\",\n        \"tcDirectId\": \"23456\"\n    }\n}\n"
+                                                                                                                "content": "{\n    \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n    \"usageDescription\" : \"usage2222\",\n    \"features\" : [ {\n            \"name\" : \"feature1\",\n            \"description\" : \"desc1\"\n        }, {\n            \"name\" : \"feature2\",\n            \"description\" : \"desc2\"\n    } ],\n    \"modelType\": \"app-project\",\n    \"name\" : \"new project001\",\n    \"summary\" : \"test summary\",\n    \"requestType\":\"Design&Code\",\n    \"status\": \"Assigned\",\n    \"statusNotes\": \"noted\",\n    \"copilotId\": \"12345\",\n    \"tcDirectId\": \"23456\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -2813,7 +2813,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n",
+                                                                                                "body": "{\n    \"param\": {\n        \"stepType\": \"DesignConcepts\",\n        \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n        \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n        \"details\": {\n            \"numberOfRanks\": 5,\n            \"rankedSubmissions\": [\n                {\n                    \"rank\": 1,\n                    \"submissionId\": \"12345\"\n                },\n                {\n                    \"rank\": 2,\n                    \"submissionId\": \"12346\"\n                },\n                {\n                    \"rank\": 3,\n                    \"submissionId\": \"12347\"\n                },\n                {\n                    \"rank\": 4,\n                    \"submissionId\": \"12348\"\n                },\n                {\n                    \"rank\": 5,\n                    \"submissionId\": \"12349\"\n                }\n            ],\n            \"customerConfirmedRanks\": true,\n            \"submissionIds\": [\n                \"20000\"\n            ]\n        }\n    }\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -2821,7 +2821,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                                                                                                                "content": "{\n    \"param\": {\n        \"stepType\": \"DesignConcepts\",\n        \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n        \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n        \"details\": {\n            \"numberOfRanks\": 5,\n            \"rankedSubmissions\": [\n                {\n                    \"rank\": 1,\n                    \"submissionId\": \"12345\"\n                },\n                {\n                    \"rank\": 2,\n                    \"submissionId\": \"12346\"\n                },\n                {\n                    \"rank\": 3,\n                    \"submissionId\": \"12347\"\n                },\n                {\n                    \"rank\": 4,\n                    \"submissionId\": \"12348\"\n                },\n                {\n                    \"rank\": 5,\n                    \"submissionId\": \"12349\"\n                }\n            ],\n            \"customerConfirmedRanks\": true,\n            \"submissionIds\": [\n                \"20000\"\n            ]\n        }\n    }\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -4284,7 +4284,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    {\n        \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n        \"usageDescription\" : \"usage2222\",\n        \"features\" : [ {\n                \"name\" : \"feature1\",\n                \"description\" : \"desc1\"\n            }, {\n                \"name\" : \"feature2\",\n                \"description\" : \"desc2\"\n        } ],\n        \"modelType\": \"app-project\",\n        \"name\" : \"new project001\",\n        \"summary\" : \"test summary\",\n        \"requestType\":\"Design&Code\",\n        \"status\": \"Assigned\",\n        \"statusNotes\": \"noted\",\n        \"copilotId\": \"12345\",\n        \"tcDirectId\": \"23456\"\n    }\n}\n",
+                                                                                                "body": "{\n    \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n    \"usageDescription\" : \"usage2222\",\n    \"features\" : [ {\n            \"name\" : \"feature1\",\n            \"description\" : \"desc1\"\n        }, {\n            \"name\" : \"feature2\",\n            \"description\" : \"desc2\"\n    } ],\n    \"modelType\": \"app-project\",\n    \"name\" : \"new project001\",\n    \"summary\" : \"test summary\",\n    \"requestType\":\"Design&Code\",\n    \"status\": \"Assigned\",\n    \"statusNotes\": \"noted\",\n    \"copilotId\": \"12345\",\n    \"tcDirectId\": \"23456\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -4292,7 +4292,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    {\n        \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n        \"usageDescription\" : \"usage2222\",\n        \"features\" : [ {\n                \"name\" : \"feature1\",\n                \"description\" : \"desc1\"\n            }, {\n                \"name\" : \"feature2\",\n                \"description\" : \"desc2\"\n        } ],\n        \"modelType\": \"app-project\",\n        \"name\" : \"new project001\",\n        \"summary\" : \"test summary\",\n        \"requestType\":\"Design&Code\",\n        \"status\": \"Assigned\",\n        \"statusNotes\": \"noted\",\n        \"copilotId\": \"12345\",\n        \"tcDirectId\": \"23456\"\n    }\n}\n"
+                                                                                                                "content": "{\n    \"competitorApps\" : [ \"comp 1\", \"comp 2\", \"comp 3\" ],\n    \"usageDescription\" : \"usage2222\",\n    \"features\" : [ {\n            \"name\" : \"feature1\",\n            \"description\" : \"desc1\"\n        }, {\n            \"name\" : \"feature2\",\n            \"description\" : \"desc2\"\n    } ],\n    \"modelType\": \"app-project\",\n    \"name\" : \"new project001\",\n    \"summary\" : \"test summary\",\n    \"requestType\":\"Design&Code\",\n    \"status\": \"Assigned\",\n    \"statusNotes\": \"noted\",\n    \"copilotId\": \"12345\",\n    \"tcDirectId\": \"23456\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -4779,7 +4779,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n",
+                                                                                                "body": "{\n    \"param\": {\n        \"stepType\": \"DesignConcepts\",\n        \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n        \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n        \"details\": {\n            \"numberOfRanks\": 5,\n            \"rankedSubmissions\": [\n                {\n                    \"rank\": 1,\n                    \"submissionId\": \"12345\"\n                },\n                {\n                    \"rank\": 2,\n                    \"submissionId\": \"12346\"\n                },\n                {\n                    \"rank\": 3,\n                    \"submissionId\": \"12347\"\n                },\n                {\n                    \"rank\": 4,\n                    \"submissionId\": \"12348\"\n                },\n                {\n                    \"rank\": 5,\n                    \"submissionId\": \"12349\"\n                }\n            ],\n            \"customerConfirmedRanks\": true,\n            \"submissionIds\": [\n                \"20000\"\n            ]\n        }\n    }\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -4787,7 +4787,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"param\": {\n        {\n            \"stepType\": \"designConcepts\",\n            \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n            \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n            \"closed\": \"true\"\n            \"detail\": {\n                \"numberOfRanks\": 5,\n                \"rankedSubmissions\": [\n                    {\n                        \"rank\": 1,\n                        \"submissionId\": \"12345\"\n                    },\n                    {\n                        \"rank\": 2,\n                        \"submissionId\": \"12346\"\n                    },\n                    {\n                        \"rank\": 3,\n                        \"submissionId\": \"12347\"\n                    },\n                    {\n                        \"rank\": 4,\n                        \"submissionId\": \"12348\"\n                    },\n                    {\n                        \"rank\": 5,\n                        \"submissionId\": \"12349\"\n                    },\n                ],\n                \"customerFinalizedRanks\": true,\n                \"submissions\": [\n                    {\n                        \"submissionSetId\": \"20000\"\n                    }\n                ]\n            }\n        }\n    }\n}\n"
+                                                                                                                "content": "{\n    \"param\": {\n        \"stepType\": \"DesignConcepts\",\n        \"startsAt\": \"2015-07-17T09:45:45.901-07:00\",\n        \"endsAt\": \"2015-07-23T09:45:45.901-07:00\",\n        \"details\": {\n            \"numberOfRanks\": 5,\n            \"rankedSubmissions\": [\n                {\n                    \"rank\": 1,\n                    \"submissionId\": \"12345\"\n                },\n                {\n                    \"rank\": 2,\n                    \"submissionId\": \"12346\"\n                },\n                {\n                    \"rank\": 3,\n                    \"submissionId\": \"12347\"\n                },\n                {\n                    \"rank\": 4,\n                    \"submissionId\": \"12348\"\n                },\n                {\n                    \"rank\": 5,\n                    \"submissionId\": \"12349\"\n                }\n            ],\n            \"customerConfirmedRanks\": true,\n            \"submissionIds\": [\n                \"20000\"\n            ]\n        }\n    }\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7092,7 +7092,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"123\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7100,7 +7100,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"123\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7163,7 +7163,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7171,7 +7171,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7226,7 +7226,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7234,7 +7234,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7276,7 +7276,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7284,7 +7284,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7326,7 +7326,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7334,7 +7334,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7425,8 +7425,8 @@ window.FIXTURES = {
                                         {
                                                 "element": "resource",
                                                 "name": "Timeline Events",
-                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n+ confirmEmail - the object describing the work event that a confirmation email has been sent \n\n+ assignCopilot - the object describing the work event that a copilot has been assigned\n\n+ quote - the object describing the work event about estimation of the project\n\n+ paymentAccepted - the object describing the work event that whether the payment has been accepted or not\n\n+ launch -  the object describing the work event that the project has been launched\n\n+ members - a list of members who have joined the project\n\n+ lastMessage -  the object describing the last (unread) message in a launch event\n\n+ desingConcepts -  the object describing the phase of deisgn concepts\n\n+ finalDesigns - the object describing the phase of final deisgns\n\n+ finalFixexs -  the object describing the phase of final fixes\n\n+ completed - the object describing the work event that whether the project has been completed or not\n\n",
-                                                "uriTemplate": "/work/{work_id}/timeline",
+                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n",
+                                                "uriTemplate": "/projects/{work_id}/timeline",
                                                 "model": {},
                                                 "parameters": [
                                                         {
@@ -7465,7 +7465,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n        {\n            type: “eventGroup”,\n            text: “Project Submitted”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                {\n                    type: “statusUpdate”,\n                    text: “Thanks!  Your email is verified”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                },\n                { \n                    type: “copilotAssigned”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    copilot: {\n                        id: 1234,\n                        handle: batman,\n                        avatarUrl: http://pict.ly\n                    }\n                },\n                {\n                    type: “quoteInfo”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    price: 19.99,\n                    duration: 2,\n                    status: “Accepted”\n                },\n                {\n                    type: “statusUpdate”,\n                    text: “Payment Method Accepted”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: “Project Launched”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “memberRegistration”,\n                    members:  [\n                        {\n                            userId: 1234,\n                            handle: batman,\n                            avatarUrl: http://pict.ly\n                        }\n                    ]\n                },\n                {\n                    type: “threadInfo”,\n                    threadId: \"abc123\",\n                    unreadMessageCount: 5,\n                    lastMessage: {\n                        content: 'Maybe its best if we stick with something something something something.',\n                        handle: “Batman”,\n                        avatarUrl: http://pict.ly\n                    }\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Design Concepts\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n                {\n                    type: “submissionThreadsInfo”,\n                    threadInfo: {\n                        type: “threadInfo”,\n                        threadId: \"abc123\",\n                        unreadMessageCount: 5,\n                        lastMessage: {\n                            content: 'Maybe its best if we stick with something something something something.',\n                            handle: “Batman”,\n                            avatarUrl: http://pict.ly\n                        }\n                    },\n                    submissionThumbnails: [\n                        “http://thumbnail.url/”\n                    ]\n                }\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Designs\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Fixes\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Project Complete\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        }]\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    {\n                        \"type\": \"EMAIL_CONFIRMED\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    },\n                    {\n                        \"type\": \"COPILOT_ASSIGNED\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"copilot\": {\n                            \"userId\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatar\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"QUOTE_INFO\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"PAYMENT_ACCEPTED\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"MEMBER_REGISTRATION\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"THREAD_INFO\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessageInfo\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"publisherInfo\": {\n                                \"userId\": \"id\",\n                                \"handle\": \"Batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"WORKSTEP_SUBMITTERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"SUBMISSION_THREAD_INFO\",\n                        \"threadInfo\": {\n                            \"type\": \"THREAD_INFO\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessageInfo\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"publisherInfo\": {\n                                    \"userId\": \"id\",\n                                    \"handle\": \"Batman\",\n                                    \"avatar\": \"http://pict.ly\"\n                                }\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"WORKSTEP_WINNERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7473,7 +7473,317 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n        {\n            type: “eventGroup”,\n            text: “Project Submitted”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                {\n                    type: “statusUpdate”,\n                    text: “Thanks!  Your email is verified”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                },\n                { \n                    type: “copilotAssigned”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    copilot: {\n                        id: 1234,\n                        handle: batman,\n                        avatarUrl: http://pict.ly\n                    }\n                },\n                {\n                    type: “quoteInfo”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    price: 19.99,\n                    duration: 2,\n                    status: “Accepted”\n                },\n                {\n                    type: “statusUpdate”,\n                    text: “Payment Method Accepted”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: “Project Launched”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “memberRegistration”,\n                    members:  [\n                        {\n                            userId: 1234,\n                            handle: batman,\n                            avatarUrl: http://pict.ly\n                        }\n                    ]\n                },\n                {\n                    type: “threadInfo”,\n                    threadId: \"abc123\",\n                    unreadMessageCount: 5,\n                    lastMessage: {\n                        content: 'Maybe its best if we stick with something something something something.',\n                        handle: “Batman”,\n                        avatarUrl: http://pict.ly\n                    }\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Design Concepts\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n                {\n                    type: “submissionThreadsInfo”,\n                    threadInfo: {\n                        type: “threadInfo”,\n                        threadId: \"abc123\",\n                        unreadMessageCount: 5,\n                        lastMessage: {\n                            content: 'Maybe its best if we stick with something something something something.',\n                            handle: “Batman”,\n                            avatarUrl: http://pict.ly\n                        }\n                    },\n                    submissionThumbnails: [\n                        “http://thumbnail.url/”\n                    ]\n                }\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Designs\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Fixes\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Project Complete\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        }]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    {\n                        \"type\": \"EMAIL_CONFIRMED\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    },\n                    {\n                        \"type\": \"COPILOT_ASSIGNED\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"copilot\": {\n                            \"userId\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatar\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"QUOTE_INFO\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"PAYMENT_ACCEPTED\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"MEMBER_REGISTRATION\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"THREAD_INFO\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessageInfo\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"publisherInfo\": {\n                                \"userId\": \"id\",\n                                \"handle\": \"Batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"WORKSTEP_SUBMITTERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"SUBMISSION_THREAD_INFO\",\n                        \"threadInfo\": {\n                            \"type\": \"THREAD_INFO\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessageInfo\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"publisherInfo\": {\n                                    \"userId\": \"id\",\n                                    \"handle\": \"Batman\",\n                                    \"avatar\": \"http://pict.ly\"\n                                }\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"WORKSTEP_WINNERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        }
+                                                ],
+                                                "content": []
+                                        }
+                                ]
+                        },
+                        {
+                                "name": "Attachments and Metadata",
+                                "description": "",
+                                "resources": [
+                                        {
+                                                "element": "resource",
+                                                "name": "Attachments",
+                                                "description": "",
+                                                "uriTemplate": "/attachments",
+                                                "model": {},
+                                                "parameters": [],
+                                                "actions": [
+                                                        {
+                                                                "name": "Get File Metadata Objects",
+                                                                "description": "",
+                                                                "method": "GET",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "filter",
+                                                                                "description": "\nUrl Encoded list of filterable fields\n\n+ id - work Id\n\n+ assetType - Asset Type\n\n+ fileName - File Name\n\n+ category - Category\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "workId=fieldValue&assetType=fieldValue",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "fields",
+                                                                                "description": "\nComma separated list of fields to include\n\n+ url - Include the preSignedUrl to download each file\n",
+                                                                                "type": "",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "url",
+                                                                                "values": []
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments{?filter}{?fields}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": [{\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"null\"\n            }]\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": [{\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"null\"\n            }]\n        },\n        \"version\": \"v3\"\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Add a new File Metadata Object",
+                                                                "description": "",
+                                                                "method": "POST",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n      \"param\": {\n        \"fileName\": \"abc.jpg\",\n        \"assetType\": \"specs\",\n        \"fileType\": \"image/jpeg\",\n        \"category\": \"work\",\n        \"fileSize\": \"1241215\",\n        \"filePath\": \"test/abc.jpg\",\n        \"fileHash\": \"file-hash\",\n        \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\"\n      },\n      \"options\": null,\n      \"method\": null,\n      \"originalRequest\": false,\n      \"debug\": false,\n      \"return\": null\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n      \"param\": {\n        \"fileName\": \"abc.jpg\",\n        \"assetType\": \"specs\",\n        \"fileType\": \"image/jpeg\",\n        \"category\": \"work\",\n        \"fileSize\": \"1241215\",\n        \"filePath\": \"test/abc.jpg\",\n        \"fileHash\": \"file-hash\",\n        \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\"\n      },\n      \"options\": null,\n      \"method\": null,\n      \"originalRequest\": false,\n      \"debug\": false,\n      \"return\": null\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "Success\n",
+                                                                                                "headers": [],
+                                                                                                "body": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Delete a File Metadata Object",
+                                                                "description": "",
+                                                                "method": "DELETE",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "fileId",
+                                                                                "description": "Id of the File Metadata",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "category",
+                                                                                "description": "Category of the File Metadata\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": [
+                                                                                        {
+                                                                                                "value": "work"
+                                                                                        },
+                                                                                        {
+                                                                                                "value": "submission"
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/{fileId}{?category}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "Success\n",
+                                                                                                "headers": [],
+                                                                                                "body": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        },
+                                                                                        {
+                                                                                                "name": "404",
+                                                                                                "description": "File Not Found\n",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Get PreSigned Download Url",
+                                                                "description": "",
+                                                                "method": "GET",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "fileId",
+                                                                                "description": "Id of the File Metadata",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "category",
+                                                                                "description": "Category of the File Metadata\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": [
+                                                                                        {
+                                                                                                "value": "work"
+                                                                                        },
+                                                                                        {
+                                                                                                "value": "submission"
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/{fileId}/download{?category}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Get an Upload Url",
+                                                                "description": "",
+                                                                "method": "POST",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/uploadurl"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"param\": {\n            \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"fileName\": \"abc.jpg\",\n            \"assetType\": \"specs\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\"\n        },\n        \"options\": null,\n        \"method\": null,\n        \"originalRequest\": false,\n        \"debug\": false,\n        \"return\": null\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"param\": {\n            \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"fileName\": \"abc.jpg\",\n            \"assetType\": \"specs\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\"\n        },\n        \"options\": null,\n        \"method\": null,\n        \"originalRequest\": false,\n        \"debug\": false,\n        \"return\": null\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7546,7 +7856,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"123\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7554,7 +7864,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"123\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"20150129T1355+00:00\",\n        \"endsAt\": \"20150129T1355+00:00\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": [\n      {\n        \"id\": \"abc\",\n        \"stepType\": \"designConcepts\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [\n          {\n            \"rank\": 1,\n            \"submissionId\": \"abc\"\n          }\n        ],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"def\",\n        \"stepType\": \"completeDesigns\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"numberOfRanks\": 3,\n        \"rankedSubmissions\": [],\n        \"customerConfirmedRanks\": null\n      },\n      {\n        \"id\": \"ghi\",\n        \"stepType\": \"finalFixes\",\n        \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n        \"completed\": null,\n        \"customerAcceptedFixes\": null\n      }\n    ]\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7617,7 +7927,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7625,7 +7935,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        }\n      ],\n      \"customerConfirmedRanks\": null\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7680,7 +7990,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7688,7 +7998,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7730,7 +8040,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7738,7 +8048,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"designConcepts\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"numberOfRanks\": 3,\n      \"rankedSubmissions\": [\n        {\n          \"rank\": 1,\n          \"submissionId\": \"abc\"\n        },\n        {\n          \"rank\": 2,\n          \"submissionId\": \"def\"\n        },\n        {\n          \"rank\": 3,\n          \"submissionId\": \"ghi\"\n        }\n      ],\n      \"customerConfirmedRanks\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7780,7 +8090,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7788,7 +8098,7 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"20150129T1355+00:00\",\n      \"endsAt\": \"20150129T1355+00:00\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n  \"id\": \"-2971f28b:14f9015e8d7:-7f53\",\n  \"result\": {\n    \"success\": true,\n    \"status\": 200,\n    \"metadata\": null,\n    \"content\": {\n      \"id\": \"abc\",\n      \"stepType\": \"finalFixes\",\n      \"startsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"endsAt\": \"2015-09-08T23:24:48.374Z\",\n      \"completed\": null,\n      \"customerAcceptedFixes\": true\n    }\n  },\n  \"version\": \"v3\"\n}\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -7881,8 +8191,8 @@ window.FIXTURES = {
                                         {
                                                 "element": "resource",
                                                 "name": "Timeline Events",
-                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n+ confirmEmail - the object describing the work event that a confirmation email has been sent \n\n+ assignCopilot - the object describing the work event that a copilot has been assigned\n\n+ quote - the object describing the work event about estimation of the project\n\n+ paymentAccepted - the object describing the work event that whether the payment has been accepted or not\n\n+ launch -  the object describing the work event that the project has been launched\n\n+ members - a list of members who have joined the project\n\n+ lastMessage -  the object describing the last (unread) message in a launch event\n\n+ desingConcepts -  the object describing the phase of deisgn concepts\n\n+ finalDesigns - the object describing the phase of final deisgns\n\n+ finalFixexs -  the object describing the phase of final fixes\n\n+ completed - the object describing the work event that whether the project has been completed or not\n\n",
-                                                "uriTemplate": "/work/{work_id}/timeline",
+                                                "description": "Authroization header has to be provided along with this request to identify the user. A timeline object has the following fields:\n\n",
+                                                "uriTemplate": "/projects/{work_id}/timeline",
                                                 "model": {},
                                                 "parameters": [
                                                         {
@@ -7921,7 +8231,7 @@ window.FIXTURES = {
                                                                                                                 "value": "application/json"
                                                                                                         }
                                                                                                 ],
-                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n        {\n            type: “eventGroup”,\n            text: “Project Submitted”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                {\n                    type: “statusUpdate”,\n                    text: “Thanks!  Your email is verified”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                },\n                { \n                    type: “copilotAssigned”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    copilot: {\n                        id: 1234,\n                        handle: batman,\n                        avatarUrl: http://pict.ly\n                    }\n                },\n                {\n                    type: “quoteInfo”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    price: 19.99,\n                    duration: 2,\n                    status: “Accepted”\n                },\n                {\n                    type: “statusUpdate”,\n                    text: “Payment Method Accepted”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: “Project Launched”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “memberRegistration”,\n                    members:  [\n                        {\n                            userId: 1234,\n                            handle: batman,\n                            avatarUrl: http://pict.ly\n                        }\n                    ]\n                },\n                {\n                    type: “threadInfo”,\n                    threadId: \"abc123\",\n                    unreadMessageCount: 5,\n                    lastMessage: {\n                        content: 'Maybe its best if we stick with something something something something.',\n                        handle: “Batman”,\n                        avatarUrl: http://pict.ly\n                    }\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Design Concepts\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n                {\n                    type: “submissionThreadsInfo”,\n                    threadInfo: {\n                        type: “threadInfo”,\n                        threadId: \"abc123\",\n                        unreadMessageCount: 5,\n                        lastMessage: {\n                            content: 'Maybe its best if we stick with something something something something.',\n                            handle: “Batman”,\n                            avatarUrl: http://pict.ly\n                        }\n                    },\n                    submissionThumbnails: [\n                        “http://thumbnail.url/”\n                    ]\n                }\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Designs\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Fixes\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Project Complete\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        }]\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "body": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    {\n                        \"type\": \"EMAIL_CONFIRMED\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    },\n                    {\n                        \"type\": \"COPILOT_ASSIGNED\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"copilot\": {\n                            \"userId\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatar\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"QUOTE_INFO\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"PAYMENT_ACCEPTED\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"MEMBER_REGISTRATION\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"THREAD_INFO\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessageInfo\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"publisherInfo\": {\n                                \"userId\": \"id\",\n                                \"handle\": \"Batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"WORKSTEP_SUBMITTERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"SUBMISSION_THREAD_INFO\",\n                        \"threadInfo\": {\n                            \"type\": \"THREAD_INFO\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessageInfo\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"publisherInfo\": {\n                                    \"userId\": \"id\",\n                                    \"handle\": \"Batman\",\n                                    \"avatar\": \"http://pict.ly\"\n                                }\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"WORKSTEP_WINNERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n",
                                                                                                 "schema": "",
                                                                                                 "content": [
                                                                                                         {
@@ -7929,7 +8239,319 @@ window.FIXTURES = {
                                                                                                                 "attributes": {
                                                                                                                         "role": "bodyExample"
                                                                                                                 },
-                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n        {\n            type: “eventGroup”,\n            text: “Project Submitted”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                {\n                    type: “statusUpdate”,\n                    text: “Thanks!  Your email is verified”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                },\n                { \n                    type: “copilotAssigned”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    copilot: {\n                        id: 1234,\n                        handle: batman,\n                        avatarUrl: http://pict.ly\n                    }\n                },\n                {\n                    type: “quoteInfo”,\n                    eventTime: 01-01-2001 09:09:09 PST,\n                    price: 19.99,\n                    duration: 2,\n                    status: “Accepted”\n                },\n                {\n                    type: “statusUpdate”,\n                    text: “Payment Method Accepted”,\n                    eventTime: 01-01-2001 09:09:09 PST\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: “Project Launched”,\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “memberRegistration”,\n                    members:  [\n                        {\n                            userId: 1234,\n                            handle: batman,\n                            avatarUrl: http://pict.ly\n                        }\n                    ]\n                },\n                {\n                    type: “threadInfo”,\n                    threadId: \"abc123\",\n                    unreadMessageCount: 5,\n                    lastMessage: {\n                        content: 'Maybe its best if we stick with something something something something.',\n                        handle: “Batman”,\n                        avatarUrl: http://pict.ly\n                    }\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Design Concepts\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n                {\n                    type: “submissionThreadsInfo”,\n                    threadInfo: {\n                        type: “threadInfo”,\n                        threadId: \"abc123\",\n                        unreadMessageCount: 5,\n                        lastMessage: {\n                            content: 'Maybe its best if we stick with something something something something.',\n                            handle: “Batman”,\n                            avatarUrl: http://pict.ly\n                        }\n                    },\n                    submissionThumbnails: [\n                        “http://thumbnail.url/”\n                    ]\n                }\n                { \n                    type: “userAvatars”,\n                    avatars: [\n                        avatarUrl: http://pict.ly\n                    ]\n                }\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Designs\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Final Fixes\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        },\n        {\n            type: “eventGroup”,\n            text: \"Project Complete\",\n            createdTime: 01-01-2001 09:09:09 PST,\n            events: [\n            ]\n        }]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                                "content": "{\n    \"id\": \"-455f1770:14d6dd97f63:-7f9c\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": [\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Submitted\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    {\n                        \"type\": \"EMAIL_CONFIRMED\",\n                        \"text\": \"Thanks!  Your email is verified\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    },\n                    {\n                        \"type\": \"COPILOT_ASSIGNED\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"copilot\": {\n                            \"userId\": \"1234\",\n                            \"handle\": \"batman\",\n                            \"avatar\": \"http://pict.ly\"\n                        }\n                    },\n                    {\n                        \"type\": \"QUOTE_INFO\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\",\n                        \"price\": 19.99,\n                        \"duration\": 2,\n                        \"status\": \"Accepted\"\n                    },\n                    {\n                        \"type\": \"PAYMENT_ACCEPTED\",\n                        \"text\": \"Payment Method Accepted\",\n                        \"eventTime\": \"2015-09-18T12:28:33.843-07:00\"\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Launched\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"MEMBER_REGISTRATION\",\n                        \"members\":  [\n                            {\n                                \"userId\": 1234,\n                                \"handle\": \"batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        ]\n                    },\n                    {\n                        \"type\": \"THREAD_INFO\",\n                        \"threadId\": \"abc123\",\n                        \"unreadMessageCount\": 5,\n                        \"lastMessageInfo\": {\n                            \"content\": \"Maybe its best if we stick with something something something something.\",\n                            \"publisherInfo\": {\n                                \"userId\": \"id\",\n                                \"handle\": \"Batman\",\n                                \"avatar\": \"http://pict.ly\"\n                            }\n                        }\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Design Concepts\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                    { \n                        \"type\": \"WORKSTEP_SUBMITTERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    },\n                    {\n                        \"type\": \"SUBMISSION_THREAD_INFO\",\n                        \"threadInfo\": {\n                            \"type\": \"THREAD_INFO\",\n                            \"threadId\": \"abc123\",\n                            \"unreadMessageCount\": 5,\n                            \"lastMessageInfo\": {\n                                \"content\": \"Maybe its best if we stick with something something something something.\",\n                                \"publisherInfo\": {\n                                    \"userId\": \"id\",\n                                    \"handle\": \"Batman\",\n                                    \"avatar\": \"http://pict.ly\"\n                                }\n                            }\n                        },\n                        \"submissionThumbnails\": [\n                            \"http://thumbnail.url/\"\n                        ]\n                    },\n                    { \n                        \"type\": \"WORKSTEP_WINNERS\",\n                        \"avatars\": [\n                            \"http://pict.ly\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Designs\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Final Fixes\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            },\n            {\n                \"type\": \"EVENT_GROUP\",\n                \"text\": \"Project Complete\",\n                \"createdTime\": \"2015-09-18T12:28:33.843-07:00\",\n                \"events\": [\n                ]\n            }\n        ]\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        }
+                                                ],
+                                                "content": []
+                                        }
+                                ]
+                        },
+                        {
+                                "element": "category",
+                                "attributes": {
+                                        "name": "Attachments and Metadata"
+                                },
+                                "content": [
+                                        {
+                                                "element": "resource",
+                                                "name": "Attachments",
+                                                "description": "",
+                                                "uriTemplate": "/attachments",
+                                                "model": {},
+                                                "parameters": [],
+                                                "actions": [
+                                                        {
+                                                                "name": "Get File Metadata Objects",
+                                                                "description": "",
+                                                                "method": "GET",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "filter",
+                                                                                "description": "\nUrl Encoded list of filterable fields\n\n+ id - work Id\n\n+ assetType - Asset Type\n\n+ fileName - File Name\n\n+ category - Category\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "workId=fieldValue&assetType=fieldValue",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "fields",
+                                                                                "description": "\nComma separated list of fields to include\n\n+ url - Include the preSignedUrl to download each file\n",
+                                                                                "type": "",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "url",
+                                                                                "values": []
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments{?filter}{?fields}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": [{\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"null\"\n            }]\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": [{\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"null\"\n            }]\n        },\n        \"version\": \"v3\"\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Add a new File Metadata Object",
+                                                                "description": "",
+                                                                "method": "POST",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": ""
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n      \"param\": {\n        \"fileName\": \"abc.jpg\",\n        \"assetType\": \"specs\",\n        \"fileType\": \"image/jpeg\",\n        \"category\": \"work\",\n        \"fileSize\": \"1241215\",\n        \"filePath\": \"test/abc.jpg\",\n        \"fileHash\": \"file-hash\",\n        \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\"\n      },\n      \"options\": null,\n      \"method\": null,\n      \"originalRequest\": false,\n      \"debug\": false,\n      \"return\": null\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n      \"param\": {\n        \"fileName\": \"abc.jpg\",\n        \"assetType\": \"specs\",\n        \"fileType\": \"image/jpeg\",\n        \"category\": \"work\",\n        \"fileSize\": \"1241215\",\n        \"filePath\": \"test/abc.jpg\",\n        \"fileHash\": \"file-hash\",\n        \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\"\n      },\n      \"options\": null,\n      \"method\": null,\n      \"originalRequest\": false,\n      \"debug\": false,\n      \"return\": null\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "Success\n",
+                                                                                                "headers": [],
+                                                                                                "body": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Delete a File Metadata Object",
+                                                                "description": "",
+                                                                "method": "DELETE",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "fileId",
+                                                                                "description": "Id of the File Metadata",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "category",
+                                                                                "description": "Category of the File Metadata\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": [
+                                                                                        {
+                                                                                                "value": "work"
+                                                                                        },
+                                                                                        {
+                                                                                                "value": "submission"
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/{fileId}{?category}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "Success\n",
+                                                                                                "headers": [],
+                                                                                                "body": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "{\n    \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n    \"result\": {\n        \"success\": true,\n        \"status\": 200,\n        \"metadata\": null,\n        \"content\": {\n            \"id\": \"workid\",\n            \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"assetType\": \"specs\",\n            \"fileName\": \"abc1.jpg\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\",\n            \"fileSize\": null,\n            \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n            \"fileHash\": null,\n            \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n        }\n    },\n    \"version\": \"v3\"\n}\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        },
+                                                                                        {
+                                                                                                "name": "404",
+                                                                                                "description": "File Not Found\n",
+                                                                                                "headers": [],
+                                                                                                "body": "",
+                                                                                                "schema": "",
+                                                                                                "content": []
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Get PreSigned Download Url",
+                                                                "description": "",
+                                                                "method": "GET",
+                                                                "parameters": [
+                                                                        {
+                                                                                "name": "fileId",
+                                                                                "description": "Id of the File Metadata",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": []
+                                                                        },
+                                                                        {
+                                                                                "name": "category",
+                                                                                "description": "Category of the File Metadata\n",
+                                                                                "type": "string",
+                                                                                "required": true,
+                                                                                "default": "",
+                                                                                "example": "",
+                                                                                "values": [
+                                                                                        {
+                                                                                                "value": "work"
+                                                                                        },
+                                                                                        {
+                                                                                                "value": "submission"
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/{fileId}/download{?category}"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"workid\",\n                \"fileId\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ]
+                                                                        }
+                                                                ]
+                                                        },
+                                                        {
+                                                                "name": "Get an Upload Url",
+                                                                "description": "",
+                                                                "method": "POST",
+                                                                "parameters": [],
+                                                                "attributes": {
+                                                                        "relation": "",
+                                                                        "uriTemplate": "/attachments/uploadurl"
+                                                                },
+                                                                "content": [],
+                                                                "examples": [
+                                                                        {
+                                                                                "name": "",
+                                                                                "description": "",
+                                                                                "requests": [
+                                                                                        {
+                                                                                                "name": "",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"param\": {\n            \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"fileName\": \"abc.jpg\",\n            \"assetType\": \"specs\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\"\n        },\n        \"options\": null,\n        \"method\": null,\n        \"originalRequest\": false,\n        \"debug\": false,\n        \"return\": null\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"param\": {\n            \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n            \"fileName\": \"abc.jpg\",\n            \"assetType\": \"specs\",\n            \"fileType\": \"image/jpeg\",\n            \"category\": \"work\"\n        },\n        \"options\": null,\n        \"method\": null,\n        \"originalRequest\": false,\n        \"debug\": false,\n        \"return\": null\n    }\n"
+                                                                                                        }
+                                                                                                ]
+                                                                                        }
+                                                                                ],
+                                                                                "responses": [
+                                                                                        {
+                                                                                                "name": "200",
+                                                                                                "description": "",
+                                                                                                "headers": [],
+                                                                                                "body": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n",
+                                                                                                "schema": "",
+                                                                                                "content": [
+                                                                                                        {
+                                                                                                                "element": "asset",
+                                                                                                                "attributes": {
+                                                                                                                        "role": "bodyExample"
+                                                                                                                },
+                                                                                                                "content": "    {\n        \"id\": \"6ae5aba:14fcdf9063d:-7fe4\",\n        \"result\": {\n            \"success\": true,\n            \"status\": 200,\n            \"metadata\": null,\n            \"content\": {\n                \"id\": \"1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4\",\n                \"assetType\": \"specs\",\n                \"fileName\": \"abc1.jpg\",\n                \"fileType\": \"image/jpeg\",\n                \"category\": \"work\",\n                \"fileSize\": null,\n                \"filePath\": \"app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg\",\n                \"fileHash\": null,\n                \"preSignedURL\": \"https://topcoder-dev-media.s3.amazonaws.com/app-project/localdev/1441513717335-59057fa5-da9a-4a93-a606-6136f37a48c4/specs/abc1.jpg?x-amz-security-token=AQoDYXdzEB8a4APDruHVUTQrlQBv1LRvnDHzi6zJDNlgfTp5ef8Z0GzCCz8sdI43yI3REuN60%2BLV%2FDGt0lrq6h7KuTwV2lg03BZ1OBfhvXMI194eS6v3u%2BdSJGUfELC%2FzqXXHIp%2BLCSAFLQ2qVWPsl7L52sv6IL%2F0zsB9nKP%2FOSRDnLO0HiYgbPc5Icrn4HXhSUNbjnKko9aEtnsQ3E1JnSBcHSzlX4Kq6FW79ETqnAHw6QQWewCNor1TZsBU1XzluLPBFYzvaWNplB61Wjm3TsUvYwBPSxCRos7o%2BKoQE9vnX4nA2Aok2FlL8sSbh3mfBUnso%2BPMw7I2umMuY%2FJUrF1t06ehM7CbCrxdFvhKHmq1h9gc5pojxVlPPYP9LfnQxOo3EQ4y36%2BCIAcr27knjmDGtrVJCRzufl25PGrneSjI4Snw3bsA%2B71fwM5hhcjdUF4gEzFBmtVUo2sKkZiphT%2FtbjEwO9XvMmFX%2FvMyBF9b1aEq%2BGJsCN8hzWuCzw2qUKecKWEJmJ%2BxCgVB8jYA1iDEtpauScR3teWFD4nDjunCIaxSTrMqkGIYopuFU3IIYcHKPGH6AsreFONCWYUxMR6weKyNgQZisRtzy1AEtchRpSD%2FpbVxDXgXd8CAUGCBICIpyPMjw5NkK0g7fbcrwU%3D&AWSAccessKeyId=ASIAJ4RHOT5XO6TQFOWQ&Expires=1442271083&Signature=cHaQO%2FFkDNTBRBAlLM5lJWzThk8%3D\"\n            }\n        },\n        \"version\": \"v3\"\n    }\n"
                                                                                                         }
                                                                                                 ]
                                                                                         }
@@ -14026,30 +14648,6 @@ if (typeof sinon == "undefined") {
 
 }).call(this);
 
-(function() {
-  'use strict';
-  var fixture, fixtures, key, ref, token;
-
-  AutoConfigFakeServer.init();
-
-  AutoConfigFakeServer.fakeServer.autoRespond = true;
-
-  fixtures = [];
-
-  ref = window.FIXTURES;
-  for (key in ref) {
-    fixture = ref[key];
-    fixtures.push(fixture);
-  }
-
-  AutoConfigFakeServer.consume(fixtures);
-
-  token = '"yyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS50b3Bjb2Rlci1kZXYuY29tIiwiZXhwIjoxNDMzMjcxNzYwLCJ1c2VySWQiOiI0MDEzNTUxNiIsImlhdCI6MTQzMzI3MTE2MCwianRpIjoiMDZhNzVjM2EtMTQ0MC00MWE3LTk5N2YtZmFmMGVjZjFmOGM1In0.okSjl5KOmGQ6hJEoQxk4SVkFra65_Id6KUQGdAVmJNe"';
-
-  localStorage.setItem('userJWTToken', token);
-
-}).call(this);
-
 angular.module("app.constants", [])
 
 .constant("API_URL", "https://api.topcoder.com")
@@ -14067,318 +14665,3 @@ angular.module("app.constants", [])
 .constant("AUTH0_REFRESH_TOKEN_NAME", "userRefreshJWTToken")
 
 ;
-(function() {
-  'use strict';
-  var dependencies;
-
-  dependencies = ['ui.router', 'ngResource', 'app.constants', 'appirio-tech-ng-api-services'];
-
-  angular.module('example', dependencies);
-
-}).call(this);
-
-angular.module("example").run(["$templateCache", function($templateCache) {$templateCache.put("views/api.html","<label>GET</label><pre>{{ vm.get | json }}</pre>");}]);
-(function() {
-  'use strict';
-  var config;
-
-  config = function($stateProvider) {
-    var key, results, state, states;
-    states = {};
-    states['user-v3-api'] = {
-      url: '/',
-      title: 'user-v3-api',
-      controller: 'UserV3Controller as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['authorizations'] = {
-      url: '/authorizations',
-      title: 'authorizations',
-      controller: 'AuthorizationsController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['messages-api'] = {
-      url: '/messages-api',
-      title: 'MessagesAPI',
-      controller: 'MessagesAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['steps-api'] = {
-      url: '/steps-api',
-      title: 'StepsAPI',
-      controller: 'StepsAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['submissions-api'] = {
-      url: '/submissions-api',
-      title: 'SubmissionsAPI',
-      controller: 'SubmissionsAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['threads-api'] = {
-      url: '/threads-api',
-      title: 'ThreadsAPI',
-      controller: 'ThreadsAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['work-api'] = {
-      url: '/work-api',
-      title: 'WorkAPI',
-      controller: 'WorkAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    states['submit-work-api'] = {
-      url: '/submit-work-api',
-      title: 'SubmitWorkAPI',
-      controller: 'SubmitWorkAPIController as vm',
-      templateUrl: 'views/api.html'
-    };
-    results = [];
-    for (key in states) {
-      state = states[key];
-      results.push($stateProvider.state(key, state));
-    }
-    return results;
-  };
-
-  config.$inject = ['$stateProvider'];
-
-  angular.module('example').config(config).run();
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var UserV3Controller;
-
-  UserV3Controller = function(UserV3APIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = UserV3APIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  UserV3Controller.$inject = ['UserV3APIService'];
-
-  angular.module('example').controller('UserV3Controller', UserV3Controller);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var AuthorizationsController;
-
-  AuthorizationsController = function(AuthorizationsAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = AuthorizationsAPIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  AuthorizationsController.$inject = ['AuthorizationsAPIService'];
-
-  angular.module('example').controller('AuthorizationsController', AuthorizationsController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var MessagesAPIController;
-
-  MessagesAPIController = function(MessagesAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = MessagesAPIService.put(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  MessagesAPIController.$inject = ['MessagesAPIService'];
-
-  angular.module('example').controller('MessagesAPIController', MessagesAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var ThreadsAPIController;
-
-  ThreadsAPIController = function(ThreadsAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 'id',
-        subscriberId: 'subscriberId'
-      };
-      resource = ThreadsAPIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  ThreadsAPIController.$inject = ['ThreadsAPIService'];
-
-  angular.module('example').controller('ThreadsAPIController', ThreadsAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var TimelineAPIController;
-
-  TimelineAPIController = function(TimelineAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = TimelineAPIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  TimelineAPIController.$inject = ['TimelineAPIService'];
-
-  angular.module('example').controller('TimelineAPIController', TimelineAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var WorkAPIController;
-
-  WorkAPIController = function(WorkAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = WorkAPIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  WorkAPIController.$inject = ['WorkAPIService'];
-
-  angular.module('example').controller('WorkAPIController', WorkAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var SubmitWorkAPIController;
-
-  SubmitWorkAPIController = function(SubmitWorkAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        id: 123
-      };
-      resource = SubmitWorkAPIService.get(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  SubmitWorkAPIController.$inject = ['SubmitWorkAPIService'];
-
-  angular.module('example').controller('SubmitWorkAPIController', SubmitWorkAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var StepsAPIController;
-
-  StepsAPIController = function(StepsAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        projectId: 'abc'
-      };
-      resource = StepsAPIService.query(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  StepsAPIController.$inject = ['StepsAPIService'];
-
-  angular.module('example').controller('StepsAPIController', StepsAPIController);
-
-}).call(this);
-
-(function() {
-  'use strict';
-  var SubmissionsAPIController;
-
-  SubmissionsAPIController = function(SubmissionsAPIService) {
-    var activate, vm;
-    vm = this;
-    activate = function() {
-      var params, resource;
-      params = {
-        projectId: 'abc',
-        stepId: 'abc'
-      };
-      resource = SubmissionsAPIService.query(params, function(data) {
-        return vm.get = data;
-      });
-      return vm;
-    };
-    return activate();
-  };
-
-  SubmissionsAPIController.$inject = ['SubmissionsAPIService'];
-
-  angular.module('example').controller('SubmissionsAPIController', SubmissionsAPIController);
-
-}).call(this);
