@@ -15,7 +15,7 @@ srv = ($resource, API_URL) ->
   actions =
     query:
       method           :'GET'
-      isArray          : false
+      isArray          : true
       transformResponse: transformResponse
     get:
       method           :'GET'
