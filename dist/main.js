@@ -261,7 +261,7 @@
     actions = {
       query: {
         method: 'GET',
-        isArray: true,
+        isArray: false,
         transformResponse: transformResponse
       },
       get: {
