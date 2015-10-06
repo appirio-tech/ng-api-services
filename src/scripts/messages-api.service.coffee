@@ -6,12 +6,17 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/threads/:threadId/messages'
+  url = API_URL + '/v3/messages/:id'
 
   params =
-    threadId: '@threadId'
+    id: '@id'
 
   methods =
+    post:
+      method: 'POST'
+
+    patch:
+      method: 'PATCH'
     put:
       method: 'PUT'
 
