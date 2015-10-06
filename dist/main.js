@@ -74,9 +74,9 @@
 
   srv = function($resource, API_URL) {
     var methods, params, url;
-    url = API_URL + '/v3/messages/:id';
+    url = API_URL + '/v3/threads/:threadId/messages';
     params = {
-      id: '@id'
+      threadId: '@threadId'
     };
     methods = {
       put: {
