@@ -6,10 +6,10 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/messages/:id'
+  url = API_URL + '/v3/threads/:threadId/messages'
 
   params =
-    id: '@id'
+    threadId: '@threadId'
 
   methods =
     put:
