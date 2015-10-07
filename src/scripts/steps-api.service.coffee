@@ -11,8 +11,8 @@ transformMultiple = (response) ->
   parsed?.result?.content || []
 
 updateRanks = (data) ->
-  if data?.hasOwnProperty 'rankedSubmissions'
-    rankedSubmissions = data.rankedSubmissions
+  if data.details?.hasOwnProperty 'rankedSubmissions'
+    rankedSubmissions = data.details.rankedSubmissions
   else
     rankedSubmissions = data
 
