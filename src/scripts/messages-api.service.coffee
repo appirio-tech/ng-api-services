@@ -17,6 +17,7 @@ srv = ($resource, API_URL) ->
 
     patch:
       method: 'PATCH'
+
     put:
       method: 'PUT'
 
