@@ -115,9 +115,9 @@
   };
 
   updateRanks = function(data) {
-    var rankedSubmissions, transformedData;
-    if (data != null ? data.hasOwnProperty('rankedSubmissions') : void 0) {
-      rankedSubmissions = data.rankedSubmissions;
+    var rankedSubmissions, ref, transformedData;
+    if ((ref = data.details) != null ? ref.hasOwnProperty('rankedSubmissions') : void 0) {
+      rankedSubmissions = data.details.rankedSubmissions;
     } else {
       rankedSubmissions = data;
     }
