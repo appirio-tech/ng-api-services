@@ -6,12 +6,12 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/:projectId/submissions/:submissionId/threads/:threadId/messages'
+  url = API_URL + '/v3/projects/:projectId/submissions/:submissionId/threads/:threadId/messages'
 
   params =
-    projectId: '@projectId'
+    projectId:    '@projectId'
     submissionId: '@submissionId'
-    threadId: '@threadId'
+    threadId:     '@threadId'
 
   methods =
     get:
