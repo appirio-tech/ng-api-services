@@ -10,16 +10,9 @@ transformMultiple = (response) ->
 
   parsed?.result?.content || []
 
-updateRanks = (data) ->
-  if data?.hasOwnProperty 'rankedSubmissions'
-    rankedSubmissions = data.rankedSubmissions
-  else
-    rankedSubmissions = data
-
+transformRequest = (data) ->
   transformedData =
-    param:
-      details:
-        rankedSubmissions: rankedSubmissions
+    param: data
 
   JSON.stringify transformedData
 
@@ -62,19 +55,10 @@ srv = ($resource, API_URL) ->
     query:
       transformResponse: transformMultiple
       isArray          : true
-    updateRanks:
+    patch:
       method: 'PATCH'
-      transformRequest : updateRanks
+      transformRequest : transformRequest
       transformResponse: transformSingle
-    confirmRanks:
-      method: 'PATCH'
-      transformRequest : confirmRanks
-      transformResponse: transformSingle
-    acceptFixes:
-      method: 'PATCH'
-      transformRequest : acceptFixes
-      transformResponse: transformSingle
-
 
   $resource url, params, methods
 
