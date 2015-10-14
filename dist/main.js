@@ -100,7 +100,7 @@
 
 (function() {
   'use strict';
-  var acceptFixes, confirmRanks, srv, transformMultiple, transformSingle, updateRanks;
+  var acceptFixes, confirmRanks, srv, transformMultiple, transformRequest, transformSingle;
 
   transformSingle = function(response) {
     var parsed, ref;
@@ -114,19 +114,10 @@
     return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
   };
 
-  updateRanks = function(data) {
-    var rankedSubmissions, transformedData;
-    if (data != null ? data.hasOwnProperty('rankedSubmissions') : void 0) {
-      rankedSubmissions = data.rankedSubmissions;
-    } else {
-      rankedSubmissions = data;
-    }
+  transformRequest = function(data) {
+    var transformedData;
     transformedData = {
-      param: {
-        details: {
-          rankedSubmissions: rankedSubmissions
-        }
-      }
+      param: data
     };
     return JSON.stringify(transformedData);
   };
@@ -180,19 +171,9 @@
         transformResponse: transformMultiple,
         isArray: true
       },
-      updateRanks: {
+      patch: {
         method: 'PATCH',
-        transformRequest: updateRanks,
-        transformResponse: transformSingle
-      },
-      confirmRanks: {
-        method: 'PATCH',
-        transformRequest: confirmRanks,
-        transformResponse: transformSingle
-      },
-      acceptFixes: {
-        method: 'PATCH',
-        transformRequest: acceptFixes,
+        transformRequest: transformRequest,
         transformResponse: transformSingle
       }
     };
