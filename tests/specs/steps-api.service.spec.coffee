@@ -44,8 +44,8 @@ describe 'StepsAPIService', ->
     it 'should return a step', ->
       expect(typeof step.id).to.equal 'string'
 
-  it 'should have an updateRanks method', ->
-    expect(srv.updateRanks).to.exist
+  it 'should have a patch method', ->
+    expect(srv.patch).to.exist
 
   describe 'StepsAPIService.updateRanks', ->
     beforeEach inject ($httpBackend) ->
@@ -53,41 +53,7 @@ describe 'StepsAPIService', ->
         projectId: 'abc'
         stepId   : 'abc'
 
-      srv.updateRanks params, (response) ->
-        step = response
-
-      $httpBackend.flush()
-
-    it 'should return a step', ->
-      expect(typeof step.id).to.equal 'string'
-
-  it 'should have an confirmRanks method', ->
-    expect(srv.confirmRanks).to.exist
-
-  describe 'StepsAPIService.confirmRanks', ->
-    beforeEach inject ($httpBackend) ->
-      params =
-        projectId: 'abc'
-        stepId   : 'abc'
-
-      srv.confirmRanks params, (response) ->
-        step = response
-
-      $httpBackend.flush()
-
-    it 'should return a step', ->
-      expect(typeof step.id).to.equal 'string'
-
-  it 'should have an acceptFixes method', ->
-    expect(srv.acceptFixes).to.exist
-
-  describe 'StepsAPIService.acceptFixes', ->
-    beforeEach inject ($httpBackend) ->
-      params =
-        projectId: 'abc'
-        stepId   : 'abc'
-
-      srv.acceptFixes params, (response) ->
+      srv.patch params, (response) ->
         step = response
 
       $httpBackend.flush()
