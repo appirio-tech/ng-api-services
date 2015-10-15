@@ -6,7 +6,7 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/copilots/:userId/projects/:projectId'
+  url = API_URL + '/v3/copilots/:userId/projects/:projectId/approved'
 
   params =
     userId: '@userId'
