@@ -438,7 +438,7 @@
 
   srv = function($resource, API_URL) {
     var methods, params, url;
-    url = API_URL + '/v3/copilots/:userId/projects/:projectId';
+    url = API_URL + '/v3/copilots/:userId/projects/:projectId/approved';
     params = {
       userId: '@userId',
       projectId: '@projectId'
