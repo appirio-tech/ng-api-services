@@ -6,7 +6,7 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/copilots/:userId/projects/:projectId'
+  url = API_URL + '/v3/copilots/:userId/projects/:projectId/approved'
 
   params =
     userId: '@userId'
@@ -30,4 +30,4 @@ srv = ($resource, API_URL) ->
 
 srv.$inject = ['$resource', 'API_URL']
 
-angular.module('appirio-tech-ng-api-services').factory 'CopilotProjectDetailsAPIService', srv
+angular.module('appirio-tech-ng-api-services').factory 'CopilotApprovalAPIService', srv
