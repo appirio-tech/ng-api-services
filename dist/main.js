@@ -639,6 +639,6 @@
 
   srv.$inject = ['$resource', 'API_URL'];
 
-  angular.module('appirio-tech-ng-api-services').factory('SubmitWorkCreationAPIService', srv);
+  angular.module('appirio-tech-ng-api-services').factory('ProjectsAPIService', srv);
 
 }).call(this);
