@@ -3,7 +3,7 @@
 transformResponse = (response) ->
   parsed = JSON.parse response
 
-  parsed?.result?.content || []
+  parsed?.result?.content || {}
 
 srv = ($resource, API_URL) ->
   url = API_URL + '/v3/copilots/:userId/projects/:projectId/approved'
@@ -13,14 +13,6 @@ srv = ($resource, API_URL) ->
     projectId: '@projectId'
 
   methods =
-    query:
-      method           :'GET'
-      isArray          : true
-      transformResponse: transformResponse
-    put:
-      method           :'PUT'
-      isArray          : false
-      transformResponse: transformResponse
     post:
       method           :'POST'
       isArray          : false

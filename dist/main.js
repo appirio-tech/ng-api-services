@@ -476,7 +476,7 @@
   transformResponse = function(response) {
     var parsed, ref;
     parsed = JSON.parse(response);
-    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || {};
   };
 
   srv = function($resource, API_URL) {
@@ -487,16 +487,6 @@
       projectId: '@projectId'
     };
     methods = {
-      query: {
-        method: 'GET',
-        isArray: true,
-        transformResponse: transformResponse
-      },
-      put: {
-        method: 'PUT',
-        isArray: false,
-        transformResponse: transformResponse
-      },
       post: {
         method: 'POST',
         isArray: false,
