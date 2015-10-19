@@ -559,9 +559,9 @@
 
   srv = function($resource, API_URL) {
     var methods, params, url;
-    url = API_URL + '/v3/inboxes/:workId/messages/:messageId';
+    url = API_URL + '/v3/inboxes/:threadId/messages/:messageId';
     params = {
-      workId: '@workId',
+      threadId: '@threadId',
       messageId: '@messageId'
     };
     methods = {
