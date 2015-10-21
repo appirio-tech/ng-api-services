@@ -3,7 +3,7 @@
 transformResponse = (response) ->
   parsed = JSON.parse response
 
-  parsed?.result?.content
+  parsed?.result?.content || []
 
 transformIdOnlyResponse = (response) ->
   parsed = JSON.parse response
@@ -29,6 +29,7 @@ srv = ($resource, API_URL) ->
       transformResponse: transformResponse
 
     query:
+      isArray: true
       transformResponse: transformResponse
 
   $resource url, params, methods
