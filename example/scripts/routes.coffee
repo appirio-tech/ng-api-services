@@ -51,6 +51,12 @@ config = ($stateProvider) ->
     controller  : 'SubmitWorkAPIController as vm'
     templateUrl : 'views/api.html'
 
+  states['project-estimates-api'] =
+    url         : '/project-estimates-api'
+    title       : 'ProjectEstimatesAPI'
+    controller  : 'ProjectEstimatesAPIController as vm'
+    templateUrl : 'views/api.html'
+
   for key, state of states
     $stateProvider.state key, state
 
