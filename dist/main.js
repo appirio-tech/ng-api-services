@@ -679,6 +679,39 @@
 
 (function() {
   'use strict';
+  var srv, transformResponse;
+
+  transformResponse = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  };
+
+  srv = function($resource, API_URL) {
+    var methods, url;
+    url = API_URL + '/v3/inboxes/project';
+    methods = {
+      get: {
+        method: 'GET',
+        transformResponse: transformResponse
+      },
+      query: {
+        method: 'GET',
+        isArray: true,
+        transformResponse: transformResponse
+      }
+    };
+    return $resource(url, {}, methods);
+  };
+
+  srv.$inject = ['$resource', 'API_URL'];
+
+  angular.module('appirio-tech-ng-api-services').factory('InboxesProjectAPIService', srv);
+
+}).call(this);
+
+(function() {
+  'use strict';
   var srv, transformIdOnlyResponse;
 
   transformIdOnlyResponse = function(response) {
