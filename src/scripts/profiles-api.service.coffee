@@ -17,7 +17,7 @@ srv = ($resource, API_URL) ->
       isArray          : false
       transformResponse: transformResponse
 
-   $resource url, params
+   $resource url, params, actions
 
 srv.$inject = ['$resource', 'API_URL']
 
