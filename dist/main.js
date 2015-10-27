@@ -766,7 +766,7 @@
         transformResponse: transformResponse
       }
     };
-    return $resource(url, params);
+    return $resource(url, params, actions);
   };
 
   srv.$inject = ['$resource', 'API_URL'];
