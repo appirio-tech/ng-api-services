@@ -742,3 +742,47 @@
   angular.module('appirio-tech-ng-api-services').factory('ProjectEstimatesAPIService', srv);
 
 }).call(this);
+
+(function() {
+  'use strict';
+  var srv, transformResponse;
+
+  transformResponse = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  };
+
+  srv = function($resource, API_URL) {
+    var methods, params, url;
+    url = API_URL + '/v3/projects/:projectId/status-reports/:reportId';
+    params = {
+      threadId: '@threadId',
+      reportId: '@reportId'
+    };
+    methods = {
+      get: {
+        method: 'GET',
+        transformResponse: transformResponse
+      },
+      post: {
+        method: 'POST',
+        transformResponse: transformResponse
+      },
+      patch: {
+        method: 'PATCH',
+        transformResponse: transformResponse
+      },
+      put: {
+        method: 'PUT',
+        transformResponse: transformResponse
+      }
+    };
+    return $resource(url, {}, methods);
+  };
+
+  srv.$inject = ['$resource', 'API_URL'];
+
+  angular.module('appirio-tech-ng-api-services').factory('StatusReportAPIService', srv);
+
+}).call(this);
