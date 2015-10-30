@@ -9,12 +9,17 @@ srv = ($resource, API_URL) ->
   url = API_URL + '/v3/projects/:projectId/status-reports/:reportId'
 
   params =
-    threadId: '@threadId'
+    projectId: '@projectId'
     reportId: '@reportId'
 
   methods =
     get:
       method: 'GET'
+      transformResponse: transformResponse
+
+    query:
+      method: 'GET'
+      isArray: true
       transformResponse: transformResponse
 
     post:
