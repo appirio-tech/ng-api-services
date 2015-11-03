@@ -13,6 +13,8 @@ transformIdOnlyResponse = (response) ->
 srv = ($resource, API_URL) ->
   url = API_URL + '/v3/projects/copilot/unclaimed'
 
+  params = {}
+
   methods =
     put:
       method           :'PUT'
