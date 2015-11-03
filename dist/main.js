@@ -823,3 +823,50 @@
   angular.module('appirio-tech-ng-api-services').factory('profilesAPIService', srv);
 
 }).call(this);
+
+(function() {
+  'use strict';
+  var srv, transformIdOnlyResponse, transformResponse;
+
+  transformResponse = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return (parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0) || [];
+  };
+
+  transformIdOnlyResponse = function(response) {
+    var parsed, ref;
+    parsed = JSON.parse(response);
+    return {
+      id: parsed != null ? (ref = parsed.result) != null ? ref.content : void 0 : void 0
+    };
+  };
+
+  srv = function($resource, API_URL) {
+    var methods, url;
+    url = API_URL + '/v3/projects/copilot/unclaimed';
+    methods = {
+      put: {
+        method: 'PUT',
+        transformResponse: transformIdOnlyResponse
+      },
+      post: {
+        method: 'POST',
+        transformResponse: transformIdOnlyResponse
+      },
+      get: {
+        transformResponse: transformResponse
+      },
+      query: {
+        isArray: true,
+        transformResponse: transformResponse
+      }
+    };
+    return $resource(url, params, methods);
+  };
+
+  srv.$inject = ['$resource', 'API_URL'];
+
+  angular.module('appirio-tech-ng-api-services').factory('CopilotUnclaimedProjectsAPIService', srv);
+
+}).call(this);
