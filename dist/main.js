@@ -843,8 +843,9 @@
   };
 
   srv = function($resource, API_URL) {
-    var methods, url;
+    var methods, params, url;
     url = API_URL + '/v3/projects/copilot/unclaimed';
+    params = {};
     methods = {
       put: {
         method: 'PUT',
