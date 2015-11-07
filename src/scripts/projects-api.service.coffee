@@ -5,10 +5,10 @@ transformResponse = (response) ->
 
   parsed?.result?.content || []
 
-transformIdOnlyResponse = (response) ->
-  parsed = JSON.parse response
+# transformIdOnlyResponse = (response) ->
+#   parsed = JSON.parse response
 
-  id: parsed?.result?.content
+#   id: parsed?.result?.content
 
 srv = ($resource, API_URL) ->
   url = API_URL + '/v3/projects/:id'
@@ -19,11 +19,11 @@ srv = ($resource, API_URL) ->
   methods =
     put:
       method           :'PUT'
-      transformResponse: transformIdOnlyResponse
+      transformResponse: transformResponse
 
     post:
       method           :'POST'
-      transformResponse: transformIdOnlyResponse
+      transformResponse: transformResponse
 
     get:
       transformResponse: transformResponse
