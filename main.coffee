@@ -1,2 +1,2 @@
-require './angular-resource'
+require 'angular-resource'
 require './dist/main.js'

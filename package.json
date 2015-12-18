@@ -1,7 +1,7 @@
 {
   "name": "appirio-tech-ng-api-services",
   "main": "./main.coffee",
-  "version": "0.7.16",
+  "version": "0.7.17",
   "engines": {
     "node": ">=0.10.0"
   },
