@@ -1,7 +1,7 @@
 {
   "name": "appirio-tech-ng-api-services",
-  "main": "./dist/main.js",
-  "version": "0.7.15",
+  "main": "./main.coffee",
+  "version": "0.7.16",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -9,5 +9,9 @@
     "appirio-work-styles": "0.x.x",
     "appirio-gulp-tasks": "3.x.x",
     "gulp": "^3.8.11"
+  },
+  "dependencies": {
+    "angular-resource": "^1.4.8",
+    "appirio-tech-ng-work-constants": "0.x.x"
   }
 }
