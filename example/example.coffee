@@ -18,9 +18,10 @@ exampleNav = require './nav.jade'
 document.getElementById('example-nav').innerHTML = exampleNav()
 
 views = require.context './views/', true, /^(.*\.(jade$))[^.]*$/igm
-viewPaths = views.keys()
 
 templateCache = ($templateCache) ->
+  viewPaths = views.keys()
+
   for viewPath in viewPaths
     viewPathClean = viewPath.split('./').pop()
 
