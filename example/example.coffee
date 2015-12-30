@@ -30,6 +30,4 @@ templateCache = ($templateCache) ->
 
     $templateCache.put "views/#{viewPathCleanHtml}", views(viewPath)()
 
-templateCache.$nject = ['$templateCache']
-
 angular.module('example').run templateCache
