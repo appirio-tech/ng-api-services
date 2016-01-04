@@ -12,7 +12,7 @@
     "appirio-tech-ng-work-constants": "0.x.x"
   },
   "scripts": {
-    "mock": "webpack-dev-server -d --colors",
+    "example": "webpack-dev-server -d --colors",
     "dev": "webpack-dev-server -d --colors --dev",
     "build": "webpack --bail --progress -p --build"
   }
