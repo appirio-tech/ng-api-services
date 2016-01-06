@@ -1,7 +1,7 @@
 {
   "name": "appirio-tech-ng-api-services",
   "main": "./src/src.coffee",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "devDependencies": {
     "appirio-tech-webpack-config": "0.x.x",
     "npm-prepublish": "^1.2.1"
