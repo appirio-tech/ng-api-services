@@ -3,7 +3,8 @@
   "main": "./src/src.coffee",
   "version": "1.0.0",
   "devDependencies": {
-    "appirio-tech-webpack-config": "0.x.x"
+    "appirio-tech-webpack-config": "0.x.x",
+    "npm-prepublish": "^1.2.1"
   },
   "dependencies": {
     "angular": "1.4.x",
