@@ -6,6 +6,8 @@ install:
 script:
 - webpack
 sudo: false
+before_deploy:
+- npm-prepublish --verbose
 deploy:
 - provider: npm
   email: "$NPM_EMAIL"
