@@ -6,11 +6,10 @@ transformResponse = (response) ->
   parsed?.result?.content || []
 
 srv = ($resource, API_URL) ->
-  url = API_URL + '/v3/report/:workId/steps/:stepId'
+  url = API_URL + '/v3/report/:reportId'
 
   params =
-    workId: '@workId'
-    stepId: '@stepId'
+    reportId: '@reportId'
 
   methods =
     get:
@@ -38,4 +37,4 @@ srv = ($resource, API_URL) ->
 
 srv.$inject = ['$resource', 'API_URL']
 
-angular.module('appirio-tech-ng-api-services').factory 'StatusReportAPIService', srv
+angular.module('appirio-tech-ng-api-services').factory 'StatusReportDetailAPIService', srv
