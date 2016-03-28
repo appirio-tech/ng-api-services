@@ -10,7 +10,9 @@ srv = ($resource, API_URL) ->
 
   params =
     projectId:    '@projectId'
+    stepId:       '@stepId'
     submissionId: '@submissionId'
+    fileId:       '@fileId'
     threadId:     '@threadId'
 
   methods =
