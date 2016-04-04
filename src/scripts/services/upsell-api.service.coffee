@@ -14,8 +14,9 @@ srv = ($resource, API_URL) ->
   methods =
     post:
       method: 'POST'
+      transformResponse: transformResponse
 
-  $resource url, {}, methods
+  $resource url, params, methods
 
 srv.$inject = ['$resource', 'API_URL']
 
