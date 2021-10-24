@@ -7,9 +7,9 @@
     "npm-prepublish": "^1.2.1"
   },
   "dependencies": {
-    "angular": "1.4.x",
+    "angular": "1.8.2",
     "angular-ui-router": "0.2.x",
-    "angular-resource": "1.4.x",
+    "angular-resource": "1.8.2",
     "appirio-tech-ng-work-constants": "0.x.x"
   },
   "scripts": {
